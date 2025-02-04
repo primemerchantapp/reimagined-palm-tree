@@ -460,8 +460,8 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                     return;
                                   }
 
-                                  context.goNamedAuth(
-                                      'Explore', context.mounted);
+                                  context.pushNamedAuth(
+                                      'auth_2_createProfile', context.mounted);
                                 },
                                 text: 'Continue with Google',
                                 icon: FaIcon(

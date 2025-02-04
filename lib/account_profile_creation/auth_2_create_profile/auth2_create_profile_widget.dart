@@ -123,23 +123,15 @@ class _Auth2CreateProfileWidgetState extends State<Auth2CreateProfileWidget>
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 12.0, 0.0),
-                          child: Icon(
-                            Icons.flourescent_rounded,
-                            color: FlutterFlowTheme.of(context).info,
-                            size: 44.0,
-                          ),
-                        ),
                         Text(
-                          'flow.io',
+                          'Gala',
                           style: FlutterFlowTheme.of(context)
                               .displaySmall
                               .override(
                                 fontFamily: FlutterFlowTheme.of(context)
                                     .displaySmallFamily,
                                 color: FlutterFlowTheme.of(context).info,
+                                fontSize: 45.0,
                                 letterSpacing: 0.0,
                                 useGoogleFonts: GoogleFonts.asMap().containsKey(
                                     FlutterFlowTheme.of(context)
@@ -180,9 +172,7 @@ class _Auth2CreateProfileWidgetState extends State<Auth2CreateProfileWidget>
                         child: EditProfileAuth2Widget(
                           title: 'Create Profile',
                           confirmButtonText: 'Save & Continue',
-                          navigateAction: () async {
-                            context.pushNamed('auth_2_Profile');
-                          },
+                          navigateAction: () async {},
                         ),
                       ),
                     ),

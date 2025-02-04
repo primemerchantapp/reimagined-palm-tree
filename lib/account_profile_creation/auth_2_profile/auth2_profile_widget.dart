@@ -170,18 +170,15 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                             ),
                             child: Padding(
                               padding: EdgeInsets.all(4.0),
-                              child: AuthUserStreamWidget(
-                                builder: (context) => ClipRRect(
-                                  borderRadius: BorderRadius.circular(50.0),
-                                  child: CachedNetworkImage(
-                                    fadeInDuration: Duration(milliseconds: 500),
-                                    fadeOutDuration:
-                                        Duration(milliseconds: 500),
-                                    imageUrl: currentUserPhoto,
-                                    width: 100.0,
-                                    height: 100.0,
-                                    fit: BoxFit.cover,
-                                  ),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(50.0),
+                                child: CachedNetworkImage(
+                                  fadeInDuration: Duration(milliseconds: 500),
+                                  fadeOutDuration: Duration(milliseconds: 500),
+                                  imageUrl: currentUserPhoto,
+                                  width: 100.0,
+                                  height: 100.0,
+                                  fit: BoxFit.cover,
                                 ),
                               ),
                             ),
@@ -193,18 +190,15 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                 ),
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(24.0, 12.0, 0.0, 0.0),
-                  child: AuthUserStreamWidget(
-                    builder: (context) => Text(
-                      currentUserDisplayName,
-                      style: FlutterFlowTheme.of(context).displaySmall.override(
-                            fontFamily:
-                                FlutterFlowTheme.of(context).displaySmallFamily,
-                            letterSpacing: 0.0,
-                            useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                FlutterFlowTheme.of(context)
-                                    .displaySmallFamily),
-                          ),
-                    ),
+                  child: Text(
+                    currentUserDisplayName,
+                    style: FlutterFlowTheme.of(context).displaySmall.override(
+                          fontFamily:
+                              FlutterFlowTheme.of(context).displaySmallFamily,
+                          letterSpacing: 0.0,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context).displaySmallFamily),
+                        ),
                   ),
                 ),
                 Padding(
