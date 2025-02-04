@@ -323,17 +323,19 @@ class FFRoute {
                 )
               : builder(context, ffParams);
           final child = appStateNotifier.loading
-              ? Container(
-                  color: FlutterFlowTheme.of(context).primary,
-                  child: Center(
-                    child: Image.asset(
-                      'assets/images/playstore-icon.png',
-                      width: 300.0,
-                      height: 300.0,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                )
+              ? isWeb
+                  ? Container()
+                  : Container(
+                      color: FlutterFlowTheme.of(context).primary,
+                      child: Center(
+                        child: Image.asset(
+                          'assets/images/playstore-icon.png',
+                          width: 300.0,
+                          height: 300.0,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    )
               : page;
 
           final transitionInfo = state.transitionInfo;
