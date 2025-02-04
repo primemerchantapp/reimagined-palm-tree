@@ -37,6 +37,7 @@ class _TaxesModalWidgetState extends State<TaxesModalWidget>
       length: 2,
       initialIndex: 0,
     )..addListener(() => safeSetState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -167,9 +168,17 @@ class _TaxesModalWidgetState extends State<TaxesModalWidget>
                                             style: FlutterFlowTheme.of(context)
                                                 .titleSmall
                                                 .override(
-                                                  fontFamily: 'SFPRO',
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmallFamily,
                                                   letterSpacing: 0.0,
-                                                  useGoogleFonts: false,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmallFamily),
                                                 ),
                                           ),
                                           Padding(
@@ -192,9 +201,17 @@ class _TaxesModalWidgetState extends State<TaxesModalWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .titleSmall
                                                       .override(
-                                                        fontFamily: 'SFPRO',
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleSmallFamily,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmallFamily),
                                                       ),
                                             ),
                                           ),
@@ -223,9 +240,17 @@ class _TaxesModalWidgetState extends State<TaxesModalWidget>
                                                           context)
                                                       .displayLarge
                                                       .override(
-                                                        fontFamily: 'SFPRO',
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .displayLargeFamily,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .displayLargeFamily),
                                                       ),
                                                 ),
                                               ),
@@ -266,9 +291,17 @@ class _TaxesModalWidgetState extends State<TaxesModalWidget>
                                                             .of(context)
                                                         .labelSmall
                                                         .override(
-                                                          fontFamily: 'SFPRO',
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelSmallFamily,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelSmallFamily),
                                                         ),
                                                     unselectedLabelStyle:
                                                         TextStyle(),
@@ -337,9 +370,9 @@ class _TaxesModalWidgetState extends State<TaxesModalWidget>
                                                                               Text(
                                                                             'Taxpayer information',
                                                                             style: FlutterFlowTheme.of(context).titleLarge.override(
-                                                                                  fontFamily: 'SFPRO',
+                                                                                  fontFamily: FlutterFlowTheme.of(context).titleLargeFamily,
                                                                                   letterSpacing: 0.0,
-                                                                                  useGoogleFonts: false,
+                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleLargeFamily),
                                                                                 ),
                                                                           ),
                                                                         ),
@@ -360,10 +393,10 @@ class _TaxesModalWidgetState extends State<TaxesModalWidget>
                                                                                 'Tax info is required in most countries where the taxpayer is a resident, Host or Co-Host, or both.',
                                                                                 maxLines: 3,
                                                                                 style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                      fontFamily: 'SFPRO',
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                                       color: FlutterFlowTheme.of(context).secondaryText,
                                                                                       letterSpacing: 0.0,
-                                                                                      useGoogleFonts: false,
+                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyLargeFamily),
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -377,10 +410,10 @@ class _TaxesModalWidgetState extends State<TaxesModalWidget>
                                                                               child: Text(
                                                                                 'Learn more ',
                                                                                 style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                      fontFamily: 'SFPRO',
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                                       letterSpacing: 0.0,
                                                                                       decoration: TextDecoration.underline,
-                                                                                      useGoogleFonts: false,
+                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyLargeFamily),
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -416,10 +449,10 @@ class _TaxesModalWidgetState extends State<TaxesModalWidget>
                                                                         textStyle: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              fontFamily: 'SFPRO',
+                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                               color: Colors.white,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: false,
+                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                             ),
                                                                         borderSide:
                                                                             BorderSide(
@@ -466,9 +499,9 @@ class _TaxesModalWidgetState extends State<TaxesModalWidget>
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .titleLarge
                                                                               .override(
-                                                                                fontFamily: 'SFPRO',
+                                                                                fontFamily: FlutterFlowTheme.of(context).titleLargeFamily,
                                                                                 letterSpacing: 0.0,
-                                                                                useGoogleFonts: false,
+                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleLargeFamily),
                                                                               ),
                                                                         ),
                                                                       ),
@@ -489,10 +522,10 @@ class _TaxesModalWidgetState extends State<TaxesModalWidget>
                                                                               'If you are registered for VAT or your stay is for business, you may not be charged VAT on Appartment Rental service fee. VAT does not apply to US Hosts. ',
                                                                               maxLines: 3,
                                                                               style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                    fontFamily: 'SFPRO',
+                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                                     color: FlutterFlowTheme.of(context).secondaryText,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: false,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyLargeFamily),
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -507,10 +540,10 @@ class _TaxesModalWidgetState extends State<TaxesModalWidget>
                                                                                 Text(
                                                                               'Learn about VAT requirements by country or region',
                                                                               style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                    fontFamily: 'SFPRO',
+                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                                     letterSpacing: 0.0,
                                                                                     decoration: TextDecoration.underline,
-                                                                                    useGoogleFonts: false,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyLargeFamily),
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -550,13 +583,13 @@ class _TaxesModalWidgetState extends State<TaxesModalWidget>
                                                                           .titleSmall
                                                                           .override(
                                                                             fontFamily:
-                                                                                'SFPRO',
+                                                                                FlutterFlowTheme.of(context).titleSmallFamily,
                                                                             color:
                                                                                 Colors.white,
                                                                             letterSpacing:
                                                                                 0.0,
                                                                             useGoogleFonts:
-                                                                                false,
+                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                           ),
                                                                       borderSide:
                                                                           BorderSide(
@@ -596,9 +629,9 @@ class _TaxesModalWidgetState extends State<TaxesModalWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .titleLarge
                                                                             .override(
-                                                                              fontFamily: 'SFPRO',
+                                                                              fontFamily: FlutterFlowTheme.of(context).titleLargeFamily,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: false,
+                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleLargeFamily),
                                                                             ),
                                                                       ),
                                                                     ),
@@ -618,13 +651,13 @@ class _TaxesModalWidgetState extends State<TaxesModalWidget>
                                                                           .bodyLarge
                                                                           .override(
                                                                             fontFamily:
-                                                                                'SFPRO',
+                                                                                FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).secondaryText,
                                                                             letterSpacing:
                                                                                 0.0,
                                                                             useGoogleFonts:
-                                                                                false,
+                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyLargeFamily),
                                                                           ),
                                                                     ),
                                                                     Expanded(
@@ -634,10 +667,10 @@ class _TaxesModalWidgetState extends State<TaxesModalWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyLarge
                                                                             .override(
-                                                                              fontFamily: 'SFPRO',
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                               letterSpacing: 0.0,
                                                                               decoration: TextDecoration.underline,
-                                                                              useGoogleFonts: false,
+                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyLargeFamily),
                                                                             ),
                                                                       ),
                                                                     ),
@@ -683,10 +716,10 @@ class _TaxesModalWidgetState extends State<TaxesModalWidget>
                                                                               'Tax documents required for filing taxes are available to review and download here. ',
                                                                               maxLines: 3,
                                                                               style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                    fontFamily: 'SFPRO',
+                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                                     color: FlutterFlowTheme.of(context).secondaryText,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: false,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyLargeFamily),
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -705,27 +738,27 @@ class _TaxesModalWidgetState extends State<TaxesModalWidget>
                                                                                   TextSpan(
                                                                                     text: 'You can also file taxes using detailed earnings info, available in the ',
                                                                                     style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                          fontFamily: 'SFPRO',
+                                                                                          fontFamily: FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                                           color: FlutterFlowTheme.of(context).secondaryText,
                                                                                           letterSpacing: 0.0,
-                                                                                          useGoogleFonts: false,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyLargeFamily),
                                                                                         ),
                                                                                   ),
                                                                                   TextSpan(
                                                                                     text: 'earnings summary.',
                                                                                     style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                          fontFamily: 'SFPRO',
+                                                                                          fontFamily: FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                                           color: FlutterFlowTheme.of(context).primaryText,
                                                                                           letterSpacing: 0.0,
                                                                                           decoration: TextDecoration.underline,
-                                                                                          useGoogleFonts: false,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyLargeFamily),
                                                                                         ),
                                                                                   )
                                                                                 ],
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: 'SFPRO',
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      useGoogleFonts: false,
+                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -768,9 +801,9 @@ class _TaxesModalWidgetState extends State<TaxesModalWidget>
                                                                               child: Text(
                                                                                 '2022',
                                                                                 style: FlutterFlowTheme.of(context).titleLarge.override(
-                                                                                      fontFamily: 'SFPRO',
+                                                                                      fontFamily: FlutterFlowTheme.of(context).titleLargeFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      useGoogleFonts: false,
+                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleLargeFamily),
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -789,10 +822,10 @@ class _TaxesModalWidgetState extends State<TaxesModalWidget>
                                                                                     'No tax document issued',
                                                                                     maxLines: 3,
                                                                                     style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                          fontFamily: 'SFPRO',
+                                                                                          fontFamily: FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                                           color: FlutterFlowTheme.of(context).secondaryText,
                                                                                           letterSpacing: 0.0,
-                                                                                          useGoogleFonts: false,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyLargeFamily),
                                                                                         ),
                                                                                   ),
                                                                                 ),
@@ -836,9 +869,9 @@ class _TaxesModalWidgetState extends State<TaxesModalWidget>
                                                                               child: Text(
                                                                                 '2021',
                                                                                 style: FlutterFlowTheme.of(context).titleLarge.override(
-                                                                                      fontFamily: 'SFPRO',
+                                                                                      fontFamily: FlutterFlowTheme.of(context).titleLargeFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      useGoogleFonts: false,
+                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleLargeFamily),
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -857,10 +890,10 @@ class _TaxesModalWidgetState extends State<TaxesModalWidget>
                                                                                     'No tax document issued',
                                                                                     maxLines: 3,
                                                                                     style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                          fontFamily: 'SFPRO',
+                                                                                          fontFamily: FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                                           color: FlutterFlowTheme.of(context).secondaryText,
                                                                                           letterSpacing: 0.0,
-                                                                                          useGoogleFonts: false,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyLargeFamily),
                                                                                         ),
                                                                                   ),
                                                                                 ),
@@ -895,27 +928,27 @@ class _TaxesModalWidgetState extends State<TaxesModalWidget>
                                                                                   TextSpan(
                                                                                     text: 'For tax documents issued prior to 2019, ',
                                                                                     style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                          fontFamily: 'SFPRO',
+                                                                                          fontFamily: FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                                           color: FlutterFlowTheme.of(context).secondaryText,
                                                                                           letterSpacing: 0.0,
-                                                                                          useGoogleFonts: false,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyLargeFamily),
                                                                                         ),
                                                                                   ),
                                                                                   TextSpan(
                                                                                     text: 'contact us',
                                                                                     style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                          fontFamily: 'SFPRO',
+                                                                                          fontFamily: FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                                           color: FlutterFlowTheme.of(context).primaryText,
                                                                                           letterSpacing: 0.0,
                                                                                           decoration: TextDecoration.underline,
-                                                                                          useGoogleFonts: false,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyLargeFamily),
                                                                                         ),
                                                                                   )
                                                                                 ],
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: 'SFPRO',
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      useGoogleFonts: false,
+                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -943,9 +976,9 @@ class _TaxesModalWidgetState extends State<TaxesModalWidget>
                                                                                 Text(
                                                                               'Need help?',
                                                                               style: FlutterFlowTheme.of(context).titleLarge.override(
-                                                                                    fontFamily: 'SFPRO',
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleLargeFamily,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: false,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleLargeFamily),
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -960,10 +993,10 @@ class _TaxesModalWidgetState extends State<TaxesModalWidget>
                                                                             maxLines:
                                                                                 3,
                                                                             style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                  fontFamily: 'SFPRO',
+                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                                   color: FlutterFlowTheme.of(context).secondaryText,
                                                                                   letterSpacing: 0.0,
-                                                                                  useGoogleFonts: false,
+                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyLargeFamily),
                                                                                 ),
                                                                           ),
                                                                           Expanded(
@@ -971,10 +1004,10 @@ class _TaxesModalWidgetState extends State<TaxesModalWidget>
                                                                                 Text(
                                                                               'Help Center',
                                                                               style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                    fontFamily: 'SFPRO',
+                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                                     letterSpacing: 0.0,
                                                                                     decoration: TextDecoration.underline,
-                                                                                    useGoogleFonts: false,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyLargeFamily),
                                                                                   ),
                                                                             ),
                                                                           ),

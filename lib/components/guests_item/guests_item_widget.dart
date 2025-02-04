@@ -35,6 +35,8 @@ class _GuestsItemWidgetState extends State<GuestsItemWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => GuestsItemModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -66,9 +68,12 @@ class _GuestsItemWidgetState extends State<GuestsItemWidget> {
                         widget!.title!,
                         maxLines: 1,
                         style: FlutterFlowTheme.of(context).titleSmall.override(
-                              fontFamily: 'SFPRO',
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).titleSmallFamily,
                               letterSpacing: 0.0,
-                              useGoogleFonts: false,
+                              useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                  FlutterFlowTheme.of(context)
+                                      .titleSmallFamily),
                             ),
                       ),
                     ),
@@ -82,10 +87,12 @@ class _GuestsItemWidgetState extends State<GuestsItemWidget> {
                         widget!.description!,
                         maxLines: 1,
                         style: FlutterFlowTheme.of(context).bodyLarge.override(
-                              fontFamily: 'SFPRO',
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).bodyLargeFamily,
                               color: FlutterFlowTheme.of(context).secondaryText,
                               letterSpacing: 0.0,
-                              useGoogleFonts: false,
+                              useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                  FlutterFlowTheme.of(context).bodyLargeFamily),
                             ),
                       ),
                     ),
@@ -123,10 +130,12 @@ class _GuestsItemWidgetState extends State<GuestsItemWidget> {
               countBuilder: (count) => Text(
                 count.toString(),
                 style: FlutterFlowTheme.of(context).titleMedium.override(
-                      fontFamily: 'SFPRO',
+                      fontFamily:
+                          FlutterFlowTheme.of(context).titleMediumFamily,
                       color: FlutterFlowTheme.of(context).secondaryText,
                       letterSpacing: 0.0,
-                      useGoogleFonts: false,
+                      useGoogleFonts: GoogleFonts.asMap().containsKey(
+                          FlutterFlowTheme.of(context).titleMediumFamily),
                     ),
               ),
               count: _model.countControllerValue ??= 0,

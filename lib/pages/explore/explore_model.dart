@@ -1,4 +1,3 @@
-import '/components/card_display_item/card_display_item_widget.dart';
 import '/components/item_map_view/item_map_view_widget.dart';
 import '/components/modals/filters_modal/filters_modal_widget.dart';
 import '/components/modals/stay_modal/stay_modal_widget.dart';
@@ -33,8 +32,6 @@ class ExploreModel extends FlutterFlowModel<ExploreWidget> {
   late ItemMapViewModel itemMapViewModel3;
   // Model for itemMapView component.
   late ItemMapViewModel itemMapViewModel4;
-  // Model for CardDisplayItem component.
-  late CardDisplayItemModel cardDisplayItemModel;
   // Model for navBar component.
   late NavBarModel navBarModel;
 
@@ -44,7 +41,6 @@ class ExploreModel extends FlutterFlowModel<ExploreWidget> {
     itemMapViewModel2 = createModel(context, () => ItemMapViewModel());
     itemMapViewModel3 = createModel(context, () => ItemMapViewModel());
     itemMapViewModel4 = createModel(context, () => ItemMapViewModel());
-    cardDisplayItemModel = createModel(context, () => CardDisplayItemModel());
     navBarModel = createModel(context, () => NavBarModel());
   }
 
@@ -55,7 +51,6 @@ class ExploreModel extends FlutterFlowModel<ExploreWidget> {
     itemMapViewModel2.dispose();
     itemMapViewModel3.dispose();
     itemMapViewModel4.dispose();
-    cardDisplayItemModel.dispose();
     navBarModel.dispose();
   }
 }

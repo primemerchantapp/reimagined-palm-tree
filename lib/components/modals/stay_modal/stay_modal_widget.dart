@@ -39,6 +39,8 @@ class _StayModalWidgetState extends State<StayModalWidget>
     )..addListener(() => safeSetState(() {}));
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -76,12 +78,16 @@ class _StayModalWidgetState extends State<StayModalWidget>
                         labelColor: FlutterFlowTheme.of(context).primaryText,
                         unselectedLabelColor:
                             FlutterFlowTheme.of(context).secondaryText,
-                        labelStyle:
-                            FlutterFlowTheme.of(context).labelLarge.override(
-                                  fontFamily: 'SFPRO',
-                                  letterSpacing: 0.0,
-                                  useGoogleFonts: false,
-                                ),
+                        labelStyle: FlutterFlowTheme.of(context)
+                            .labelLarge
+                            .override(
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).labelLargeFamily,
+                              letterSpacing: 0.0,
+                              useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                  FlutterFlowTheme.of(context)
+                                      .labelLargeFamily),
+                            ),
                         unselectedLabelStyle: TextStyle(),
                         indicatorColor:
                             FlutterFlowTheme.of(context).primaryText,
@@ -156,12 +162,16 @@ class _StayModalWidgetState extends State<StayModalWidget>
                                                                     context)
                                                                 .titleMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'SFPRO',
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleMediumFamily,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts:
-                                                                      false,
+                                                                  useGoogleFonts: GoogleFonts
+                                                                          .asMap()
+                                                                      .containsKey(
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .titleMediumFamily),
                                                                 ),
                                                       ),
                                                     ),
@@ -205,14 +215,17 @@ class _StayModalWidgetState extends State<StayModalWidget>
                                                                   .bodyLarge
                                                                   .override(
                                                                     fontFamily:
-                                                                        'SFPRO',
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyLargeFamily,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .secondaryText,
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    useGoogleFonts:
-                                                                        false,
+                                                                    useGoogleFonts: GoogleFonts
+                                                                            .asMap()
+                                                                        .containsKey(
+                                                                            FlutterFlowTheme.of(context).bodyLargeFamily),
                                                                   ),
                                                           hintText:
                                                               'I\'m flexible',
@@ -222,14 +235,17 @@ class _StayModalWidgetState extends State<StayModalWidget>
                                                                   .labelMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'SFPRO',
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .labelMediumFamily,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .secondaryText,
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    useGoogleFonts:
-                                                                        false,
+                                                                    useGoogleFonts: GoogleFonts
+                                                                            .asMap()
+                                                                        .containsKey(
+                                                                            FlutterFlowTheme.of(context).labelMediumFamily),
                                                                   ),
                                                           enabledBorder:
                                                               OutlineInputBorder(
@@ -299,12 +315,16 @@ class _StayModalWidgetState extends State<StayModalWidget>
                                                                     context)
                                                                 .titleSmall
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'SFPRO',
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmallFamily,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts:
-                                                                      false,
+                                                                  useGoogleFonts: GoogleFonts
+                                                                          .asMap()
+                                                                      .containsKey(
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .titleSmallFamily),
                                                                 ),
                                                         validator: _model
                                                             .textControllerValidator
@@ -381,11 +401,14 @@ class _StayModalWidgetState extends State<StayModalWidget>
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'SFPRO',
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily,
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    useGoogleFonts:
-                                                                        false,
+                                                                    useGoogleFonts: GoogleFonts
+                                                                            .asMap()
+                                                                        .containsKey(
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                   ),
                                                             ),
                                                           ],
@@ -449,11 +472,14 @@ class _StayModalWidgetState extends State<StayModalWidget>
                                                                   .bodyLarge
                                                                   .override(
                                                                     fontFamily:
-                                                                        'SFPRO',
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyLargeFamily,
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    useGoogleFonts:
-                                                                        false,
+                                                                    useGoogleFonts: GoogleFonts
+                                                                            .asMap()
+                                                                        .containsKey(
+                                                                            FlutterFlowTheme.of(context).bodyLargeFamily),
                                                                   ),
                                                             ),
                                                           ],
@@ -517,11 +543,14 @@ class _StayModalWidgetState extends State<StayModalWidget>
                                                                   .bodyLarge
                                                                   .override(
                                                                     fontFamily:
-                                                                        'SFPRO',
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyLargeFamily,
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    useGoogleFonts:
-                                                                        false,
+                                                                    useGoogleFonts: GoogleFonts
+                                                                            .asMap()
+                                                                        .containsKey(
+                                                                            FlutterFlowTheme.of(context).bodyLargeFamily),
                                                                   ),
                                                             ),
                                                           ],
@@ -585,11 +614,14 @@ class _StayModalWidgetState extends State<StayModalWidget>
                                                                   .bodyLarge
                                                                   .override(
                                                                     fontFamily:
-                                                                        'SFPRO',
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyLargeFamily,
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    useGoogleFonts:
-                                                                        false,
+                                                                    useGoogleFonts: GoogleFonts
+                                                                            .asMap()
+                                                                        .containsKey(
+                                                                            FlutterFlowTheme.of(context).bodyLargeFamily),
                                                                   ),
                                                             ),
                                                           ],
@@ -648,12 +680,20 @@ class _StayModalWidgetState extends State<StayModalWidget>
                                                             context)
                                                         .titleSmall
                                                         .override(
-                                                          fontFamily: 'SFPRO',
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryText,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmallFamily),
                                                         ),
                                                   ),
                                                 ),
@@ -665,12 +705,20 @@ class _StayModalWidgetState extends State<StayModalWidget>
                                                             context)
                                                         .titleSmall
                                                         .override(
-                                                          fontFamily: 'SFPRO',
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryText,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmallFamily),
                                                         ),
                                                   ),
                                                 ),
@@ -728,12 +776,20 @@ class _StayModalWidgetState extends State<StayModalWidget>
                                                             context)
                                                         .titleSmall
                                                         .override(
-                                                          fontFamily: 'SFPRO',
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryText,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmallFamily),
                                                         ),
                                                   ),
                                                 ),
@@ -745,12 +801,20 @@ class _StayModalWidgetState extends State<StayModalWidget>
                                                             context)
                                                         .titleSmall
                                                         .override(
-                                                          fontFamily: 'SFPRO',
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryText,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmallFamily),
                                                         ),
                                                   ),
                                                 ),
@@ -823,11 +887,16 @@ class _StayModalWidgetState extends State<StayModalWidget>
                                       style: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'SFPRO',
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmallFamily,
                                             letterSpacing: 0.0,
                                             decoration:
                                                 TextDecoration.underline,
-                                            useGoogleFonts: false,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmallFamily),
                                           ),
                                     ),
                                     FFButtonWidget(
@@ -840,21 +909,27 @@ class _StayModalWidgetState extends State<StayModalWidget>
                                         size: 16.0,
                                       ),
                                       options: FFButtonOptions(
-                                        height: 40.0,
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             24.0, 0.0, 24.0, 0.0),
                                         iconPadding:
                                             EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
                                         color: FlutterFlowTheme.of(context)
-                                            .accent2,
+                                            .primary,
                                         textStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
-                                              fontFamily: 'SFPRO',
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmallFamily,
                                               color: Colors.white,
                                               letterSpacing: 0.0,
-                                              useGoogleFonts: false,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmallFamily),
                                             ),
                                         borderSide: BorderSide(
                                           color: Colors.transparent,

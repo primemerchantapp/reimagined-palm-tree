@@ -31,6 +31,8 @@ class _GuestsModalWidgetState extends State<GuestsModalWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => GuestsModalModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -90,9 +92,13 @@ class _GuestsModalWidgetState extends State<GuestsModalWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .titleMedium
                                     .override(
-                                      fontFamily: 'SFPRO',
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .titleMediumFamily,
                                       letterSpacing: 0.0,
-                                      useGoogleFonts: false,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .titleMediumFamily),
                                     ),
                               ),
                             ),
@@ -134,9 +140,17 @@ class _GuestsModalWidgetState extends State<GuestsModalWidget> {
                                                             context)
                                                         .titleSmall
                                                         .override(
-                                                          fontFamily: 'SFPRO',
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmallFamily),
                                                         ),
                                                   ),
                                                 ),
@@ -153,12 +167,20 @@ class _GuestsModalWidgetState extends State<GuestsModalWidget> {
                                                             context)
                                                         .bodyLarge
                                                         .override(
-                                                          fontFamily: 'SFPRO',
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLargeFamily,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryText,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyLargeFamily),
                                                         ),
                                                   ),
                                                 ),
@@ -207,12 +229,20 @@ class _GuestsModalWidgetState extends State<GuestsModalWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .titleMedium
                                                 .override(
-                                                  fontFamily: 'SFPRO',
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleMediumFamily,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryText,
                                                   letterSpacing: 0.0,
-                                                  useGoogleFonts: false,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleMediumFamily),
                                                 ),
                                           ),
                                           count: _model.countControllerValue ??=
@@ -272,12 +302,16 @@ class _GuestsModalWidgetState extends State<GuestsModalWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyLarge
                                       .override(
-                                        fontFamily: 'SFPRO',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .bodyLargeFamily,
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryText,
                                         letterSpacing: 0.0,
                                         decoration: TextDecoration.underline,
-                                        useGoogleFonts: false,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLargeFamily),
                                       ),
                                 ),
                               ),
@@ -297,10 +331,14 @@ class _GuestsModalWidgetState extends State<GuestsModalWidget> {
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
-                                        fontFamily: 'SFPRO',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .titleSmallFamily,
                                         color: Colors.white,
                                         letterSpacing: 0.0,
-                                        useGoogleFonts: false,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmallFamily),
                                       ),
                                   borderSide: BorderSide(
                                     color: Colors.transparent,

@@ -39,6 +39,8 @@ class _ProfileSettingDetailItemsWidgetState
   void initState() {
     super.initState();
     _model = createModel(context, () => ProfileSettingDetailItemsModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -85,11 +87,16 @@ class _ProfileSettingDetailItemsWidgetState
                                     style: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
-                                          fontFamily: 'SFPRO',
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmallFamily,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
                                           letterSpacing: 0.0,
-                                          useGoogleFonts: false,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmallFamily),
                                         ),
                                   ),
                                 ),
@@ -105,11 +112,16 @@ class _ProfileSettingDetailItemsWidgetState
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
                                         .override(
-                                          fontFamily: 'SFPRO',
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLargeFamily,
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
                                           letterSpacing: 0.0,
-                                          useGoogleFonts: false,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLargeFamily),
                                         ),
                                   ),
                                 ),

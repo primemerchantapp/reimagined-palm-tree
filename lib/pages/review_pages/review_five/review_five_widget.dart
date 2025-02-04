@@ -29,6 +29,8 @@ class _ReviewFiveWidgetState extends State<ReviewFiveWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => ReviewFiveModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -94,10 +96,14 @@ class _ReviewFiveWidgetState extends State<ReviewFiveWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .labelSmall
                                   .override(
-                                    fontFamily: 'SFPRO',
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .labelSmallFamily,
                                     letterSpacing: 0.0,
                                     decoration: TextDecoration.underline,
-                                    useGoogleFonts: false,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .labelSmallFamily),
                                   ),
                             ),
                           ],
@@ -146,9 +152,17 @@ class _ReviewFiveWidgetState extends State<ReviewFiveWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .headlineMedium
                                                       .override(
-                                                        fontFamily: 'SFPRO',
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineMediumFamily,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineMediumFamily),
                                                       ),
                                             ),
                                           ),
@@ -165,13 +179,21 @@ class _ReviewFiveWidgetState extends State<ReviewFiveWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .labelMedium
                                                       .override(
-                                                        fontFamily: 'SFPRO',
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMediumFamily,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .secondaryText,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMediumFamily),
                                                       ),
                                             ),
                                           ),
@@ -218,13 +240,21 @@ class _ReviewFiveWidgetState extends State<ReviewFiveWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .labelMedium
                                                       .override(
-                                                        fontFamily: 'SFPRO',
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMediumFamily,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .secondaryText,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMediumFamily),
                                                       ),
                                             ),
                                           ),
@@ -258,9 +288,16 @@ class _ReviewFiveWidgetState extends State<ReviewFiveWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .labelLarge
                                               .override(
-                                                fontFamily: 'SFPRO',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLargeFamily,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelLargeFamily),
                                               ),
                                         ),
                                       ),
@@ -283,9 +320,14 @@ class _ReviewFiveWidgetState extends State<ReviewFiveWidget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'SFPRO',
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmallFamily,
                                             letterSpacing: 0.0,
-                                            useGoogleFonts: false,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmallFamily),
                                           ),
                                       iconColor: FlutterFlowTheme.of(context)
                                           .primaryText,
@@ -307,11 +349,16 @@ class _ReviewFiveWidgetState extends State<ReviewFiveWidget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'SFPRO',
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmallFamily,
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryText,
                                             letterSpacing: 0.0,
-                                            useGoogleFonts: false,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmallFamily),
                                           ),
                                       iconColor: FlutterFlowTheme.of(context)
                                           .secondaryText,
@@ -395,10 +442,14 @@ class _ReviewFiveWidgetState extends State<ReviewFiveWidget> {
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      fontFamily: 'SFPRO',
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .titleSmallFamily,
                                       color: Colors.white,
                                       letterSpacing: 0.0,
-                                      useGoogleFonts: false,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmallFamily),
                                     ),
                                 elevation: 0.0,
                                 borderSide: BorderSide(

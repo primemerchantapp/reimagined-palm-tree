@@ -38,6 +38,8 @@ class _ProfileSettingItemsWidgetState extends State<ProfileSettingItemsWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => ProfileSettingItemsModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -76,10 +78,13 @@ class _ProfileSettingItemsWidgetState extends State<ProfileSettingItemsWidget> {
                           style: FlutterFlowTheme.of(context)
                               .titleSmall
                               .override(
-                                fontFamily: 'SFPRO',
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .titleSmallFamily,
                                 color: FlutterFlowTheme.of(context).primaryText,
                                 letterSpacing: 0.0,
-                                useGoogleFonts: false,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .titleSmallFamily),
                               ),
                         ),
                       ),

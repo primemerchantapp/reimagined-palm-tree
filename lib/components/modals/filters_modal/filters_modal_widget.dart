@@ -35,6 +35,8 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
 
     _model.textController2 ??= TextEditingController();
     _model.textFieldFocusNode2 ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -120,9 +122,12 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .headlineMedium
                                 .override(
-                                  fontFamily: 'SFPRO',
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .headlineMediumFamily,
                                   letterSpacing: 0.0,
-                                  useGoogleFonts: false,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .headlineMediumFamily),
                                 ),
                           ),
                           Container(
@@ -161,9 +166,16 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .titleMedium
                                               .override(
-                                                fontFamily: 'SFPRO',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMediumFamily,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleMediumFamily),
                                               ),
                                         ),
                                       ),
@@ -179,12 +191,19 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .labelMedium
                                               .override(
-                                                fontFamily: 'SFPRO',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMediumFamily,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryText,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMediumFamily),
                                               ),
                                         ),
                                       ),
@@ -216,21 +235,37 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .bodyLarge
                                                     .override(
-                                                      fontFamily: 'SFPRO',
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyLargeFamily,
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .secondaryText,
                                                       letterSpacing: 0.0,
-                                                      useGoogleFonts: false,
+                                                      useGoogleFonts: GoogleFonts
+                                                              .asMap()
+                                                          .containsKey(
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLargeFamily),
                                                     ),
                                             hintStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
                                                     .override(
-                                                      fontFamily: 'SFPRO',
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMediumFamily,
                                                       letterSpacing: 0.0,
-                                                      useGoogleFonts: false,
+                                                      useGoogleFonts: GoogleFonts
+                                                              .asMap()
+                                                          .containsKey(
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMediumFamily),
                                                     ),
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
@@ -277,9 +312,16 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .titleSmall
                                               .override(
-                                                fontFamily: 'SFPRO',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmallFamily,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmallFamily),
                                               ),
                                           validator: _model
                                               .textController1Validator
@@ -311,21 +353,37 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .bodyLarge
                                                     .override(
-                                                      fontFamily: 'SFPRO',
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyLargeFamily,
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .secondaryText,
                                                       letterSpacing: 0.0,
-                                                      useGoogleFonts: false,
+                                                      useGoogleFonts: GoogleFonts
+                                                              .asMap()
+                                                          .containsKey(
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLargeFamily),
                                                     ),
                                             hintStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
                                                     .override(
-                                                      fontFamily: 'SFPRO',
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMediumFamily,
                                                       letterSpacing: 0.0,
-                                                      useGoogleFonts: false,
+                                                      useGoogleFonts: GoogleFonts
+                                                              .asMap()
+                                                          .containsKey(
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMediumFamily),
                                                     ),
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
@@ -372,9 +430,16 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .titleSmall
                                               .override(
-                                                fontFamily: 'SFPRO',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmallFamily,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmallFamily),
                                               ),
                                           validator: _model
                                               .textController2Validator
@@ -407,9 +472,16 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .titleMedium
                                               .override(
-                                                fontFamily: 'SFPRO',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMediumFamily,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleMediumFamily),
                                               ),
                                         ),
                                       ),
@@ -441,9 +513,16 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .labelLarge
                                               .override(
-                                                fontFamily: 'SFPRO',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLargeFamily,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelLargeFamily),
                                               ),
                                         ),
                                         subtitle: Text(
@@ -451,12 +530,19 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .labelMedium
                                               .override(
-                                                fontFamily: 'SFPRO',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMediumFamily,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryText,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMediumFamily),
                                               ),
                                         ),
                                         tileColor: FlutterFlowTheme.of(context)
@@ -502,9 +588,16 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .labelLarge
                                               .override(
-                                                fontFamily: 'SFPRO',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLargeFamily,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelLargeFamily),
                                               ),
                                         ),
                                         subtitle: Text(
@@ -512,12 +605,19 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .labelMedium
                                               .override(
-                                                fontFamily: 'SFPRO',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMediumFamily,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryText,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMediumFamily),
                                               ),
                                         ),
                                         tileColor: FlutterFlowTheme.of(context)
@@ -560,9 +660,16 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .titleMedium
                                               .override(
-                                                fontFamily: 'SFPRO',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMediumFamily,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleMediumFamily),
                                               ),
                                         ),
                                       ),
@@ -604,12 +711,16 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                                                   .of(context)
                                                               .labelMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'SFPRO',
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMediumFamily,
                                                                 letterSpacing:
                                                                     0.0,
-                                                                useGoogleFonts:
-                                                                    false,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .labelMediumFamily),
                                                               ),
                                                         ),
                                                       ),
@@ -649,15 +760,24 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .titleSmall
-                                                      .override(
-                                                        fontFamily: 'SFPRO',
-                                                        color: Colors.white,
-                                                        letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
-                                                      ),
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmallFamily,
+                                                            color: Colors.white,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts: GoogleFonts
+                                                                    .asMap()
+                                                                .containsKey(
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleSmallFamily),
+                                                          ),
                                                   elevation: 3.0,
                                                   borderSide: BorderSide(
                                                     color: Colors.transparent,
@@ -694,13 +814,21 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                                           .of(context)
                                                       .titleSmall
                                                       .override(
-                                                        fontFamily: 'SFPRO',
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleSmallFamily,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primaryText,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmallFamily),
                                                       ),
                                                   elevation: 0.0,
                                                   borderSide: BorderSide(
@@ -740,13 +868,21 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                                           .of(context)
                                                       .titleSmall
                                                       .override(
-                                                        fontFamily: 'SFPRO',
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleSmallFamily,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primaryText,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmallFamily),
                                                       ),
                                                   elevation: 0.0,
                                                   borderSide: BorderSide(
@@ -786,13 +922,21 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                                           .of(context)
                                                       .titleSmall
                                                       .override(
-                                                        fontFamily: 'SFPRO',
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleSmallFamily,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primaryText,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmallFamily),
                                                       ),
                                                   elevation: 0.0,
                                                   borderSide: BorderSide(
@@ -832,13 +976,21 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                                           .of(context)
                                                       .titleSmall
                                                       .override(
-                                                        fontFamily: 'SFPRO',
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleSmallFamily,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primaryText,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmallFamily),
                                                       ),
                                                   elevation: 0.0,
                                                   borderSide: BorderSide(
@@ -878,13 +1030,21 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                                           .of(context)
                                                       .titleSmall
                                                       .override(
-                                                        fontFamily: 'SFPRO',
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleSmallFamily,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primaryText,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmallFamily),
                                                       ),
                                                   elevation: 0.0,
                                                   borderSide: BorderSide(
@@ -935,12 +1095,16 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                                                     context)
                                                                 .labelMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'SFPRO',
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMediumFamily,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts:
-                                                                      false,
+                                                                  useGoogleFonts: GoogleFonts
+                                                                          .asMap()
+                                                                      .containsKey(
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .labelMediumFamily),
                                                                 ),
                                                       ),
                                                     ),
@@ -984,10 +1148,18 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .titleSmall
                                                         .override(
-                                                          fontFamily: 'SFPRO',
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily,
                                                           color: Colors.white,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmallFamily),
                                                         ),
                                                 elevation: 3.0,
                                                 borderSide: BorderSide(
@@ -1024,12 +1196,20 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .titleSmall
                                                         .override(
-                                                          fontFamily: 'SFPRO',
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryText,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmallFamily),
                                                         ),
                                                 elevation: 0.0,
                                                 borderSide: BorderSide(
@@ -1068,12 +1248,20 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .titleSmall
                                                         .override(
-                                                          fontFamily: 'SFPRO',
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryText,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmallFamily),
                                                         ),
                                                 elevation: 0.0,
                                                 borderSide: BorderSide(
@@ -1112,12 +1300,20 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .titleSmall
                                                         .override(
-                                                          fontFamily: 'SFPRO',
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryText,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmallFamily),
                                                         ),
                                                 elevation: 0.0,
                                                 borderSide: BorderSide(
@@ -1156,12 +1352,20 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .titleSmall
                                                         .override(
-                                                          fontFamily: 'SFPRO',
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryText,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmallFamily),
                                                         ),
                                                 elevation: 0.0,
                                                 borderSide: BorderSide(
@@ -1200,12 +1404,20 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .titleSmall
                                                         .override(
-                                                          fontFamily: 'SFPRO',
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryText,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmallFamily),
                                                         ),
                                                 elevation: 0.0,
                                                 borderSide: BorderSide(
@@ -1254,12 +1466,16 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                                                     context)
                                                                 .labelMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'SFPRO',
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMediumFamily,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts:
-                                                                      false,
+                                                                  useGoogleFonts: GoogleFonts
+                                                                          .asMap()
+                                                                      .containsKey(
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .labelMediumFamily),
                                                                 ),
                                                       ),
                                                     ),
@@ -1303,10 +1519,18 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .titleSmall
                                                         .override(
-                                                          fontFamily: 'SFPRO',
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily,
                                                           color: Colors.white,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmallFamily),
                                                         ),
                                                 elevation: 3.0,
                                                 borderSide: BorderSide(
@@ -1343,12 +1567,20 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .titleSmall
                                                         .override(
-                                                          fontFamily: 'SFPRO',
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryText,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmallFamily),
                                                         ),
                                                 elevation: 0.0,
                                                 borderSide: BorderSide(
@@ -1387,12 +1619,20 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .titleSmall
                                                         .override(
-                                                          fontFamily: 'SFPRO',
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryText,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmallFamily),
                                                         ),
                                                 elevation: 0.0,
                                                 borderSide: BorderSide(
@@ -1431,12 +1671,20 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .titleSmall
                                                         .override(
-                                                          fontFamily: 'SFPRO',
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryText,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmallFamily),
                                                         ),
                                                 elevation: 0.0,
                                                 borderSide: BorderSide(
@@ -1475,12 +1723,20 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .titleSmall
                                                         .override(
-                                                          fontFamily: 'SFPRO',
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryText,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmallFamily),
                                                         ),
                                                 elevation: 0.0,
                                                 borderSide: BorderSide(
@@ -1519,12 +1775,20 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .titleSmall
                                                         .override(
-                                                          fontFamily: 'SFPRO',
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryText,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmallFamily),
                                                         ),
                                                 elevation: 0.0,
                                                 borderSide: BorderSide(
@@ -1567,9 +1831,16 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .titleMedium
                                               .override(
-                                                fontFamily: 'SFPRO',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMediumFamily,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleMediumFamily),
                                               ),
                                         ),
                                       ),
@@ -1647,12 +1918,16 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                                                     .of(context)
                                                                 .headlineMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'SFPRO',
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .headlineMediumFamily,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts:
-                                                                      false,
+                                                                  useGoogleFonts: GoogleFonts
+                                                                          .asMap()
+                                                                      .containsKey(
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .headlineMediumFamily),
                                                                 ),
                                                           ),
                                                         ),
@@ -1714,12 +1989,16 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                                                     .of(context)
                                                                 .headlineMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'SFPRO',
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .headlineMediumFamily,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts:
-                                                                      false,
+                                                                  useGoogleFonts: GoogleFonts
+                                                                          .asMap()
+                                                                      .containsKey(
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .headlineMediumFamily),
                                                                 ),
                                                           ),
                                                         ),
@@ -1754,9 +2033,16 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .titleMedium
                                               .override(
-                                                fontFamily: 'SFPRO',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMediumFamily,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleMediumFamily),
                                               ),
                                         ),
                                       ),
@@ -1788,9 +2074,16 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .labelLarge
                                               .override(
-                                                fontFamily: 'SFPRO',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLargeFamily,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelLargeFamily),
                                               ),
                                         ),
                                         tileColor: FlutterFlowTheme.of(context)
@@ -1836,9 +2129,16 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .labelLarge
                                               .override(
-                                                fontFamily: 'SFPRO',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLargeFamily,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelLargeFamily),
                                               ),
                                         ),
                                         tileColor: FlutterFlowTheme.of(context)
@@ -1872,11 +2172,18 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'SFPRO',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMediumFamily,
                                                 letterSpacing: 0.0,
                                                 decoration:
                                                     TextDecoration.underline,
-                                                useGoogleFonts: false,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMediumFamily),
                                               ),
                                         ),
                                         Padding(
@@ -1926,9 +2233,16 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .titleMedium
                                               .override(
-                                                fontFamily: 'SFPRO',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMediumFamily,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleMediumFamily),
                                               ),
                                         ),
                                       ),
@@ -1948,9 +2262,16 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .labelLarge
                                             .override(
-                                              fontFamily: 'SFPRO',
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLargeFamily,
                                               letterSpacing: 0.0,
-                                              useGoogleFonts: false,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelLargeFamily),
                                             ),
                                       ),
                                       subtitle: Text(
@@ -1958,12 +2279,19 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'SFPRO',
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMediumFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryText,
                                               letterSpacing: 0.0,
-                                              useGoogleFonts: false,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMediumFamily),
                                             ),
                                       ),
                                       activeColor: FlutterFlowTheme.of(context)
@@ -1991,9 +2319,16 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .labelLarge
                                             .override(
-                                              fontFamily: 'SFPRO',
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLargeFamily,
                                               letterSpacing: 0.0,
-                                              useGoogleFonts: false,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelLargeFamily),
                                             ),
                                       ),
                                       subtitle: Text(
@@ -2001,12 +2336,19 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'SFPRO',
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMediumFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryText,
                                               letterSpacing: 0.0,
-                                              useGoogleFonts: false,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMediumFamily),
                                             ),
                                       ),
                                       activeColor: FlutterFlowTheme.of(context)
@@ -2044,9 +2386,16 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .titleMedium
                                               .override(
-                                                fontFamily: 'SFPRO',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMediumFamily,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleMediumFamily),
                                               ),
                                         ),
                                       ),
@@ -2078,9 +2427,16 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .labelLarge
                                               .override(
-                                                fontFamily: 'SFPRO',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLargeFamily,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelLargeFamily),
                                               ),
                                         ),
                                         tileColor: FlutterFlowTheme.of(context)
@@ -2126,9 +2482,16 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .labelLarge
                                               .override(
-                                                fontFamily: 'SFPRO',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLargeFamily,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelLargeFamily),
                                               ),
                                         ),
                                         tileColor: FlutterFlowTheme.of(context)
@@ -2174,9 +2537,16 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .labelLarge
                                               .override(
-                                                fontFamily: 'SFPRO',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLargeFamily,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelLargeFamily),
                                               ),
                                         ),
                                         tileColor: FlutterFlowTheme.of(context)
@@ -2210,11 +2580,18 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'SFPRO',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMediumFamily,
                                                 letterSpacing: 0.0,
                                                 decoration:
                                                     TextDecoration.underline,
-                                                useGoogleFonts: false,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMediumFamily),
                                               ),
                                         ),
                                         Padding(
@@ -2265,9 +2642,16 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .titleMedium
                                               .override(
-                                                fontFamily: 'SFPRO',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMediumFamily,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleMediumFamily),
                                               ),
                                         ),
                                       ),
@@ -2287,9 +2671,16 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .labelLarge
                                             .override(
-                                              fontFamily: 'SFPRO',
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLargeFamily,
                                               letterSpacing: 0.0,
-                                              useGoogleFonts: false,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelLargeFamily),
                                             ),
                                       ),
                                       subtitle: Text(
@@ -2297,12 +2688,19 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'SFPRO',
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMediumFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryText,
                                               letterSpacing: 0.0,
-                                              useGoogleFonts: false,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMediumFamily),
                                             ),
                                       ),
                                       tileColor: FlutterFlowTheme.of(context)
@@ -2342,9 +2740,16 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .titleMedium
                                               .override(
-                                                fontFamily: 'SFPRO',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMediumFamily,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleMediumFamily),
                                               ),
                                         ),
                                       ),
@@ -2376,9 +2781,16 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .labelLarge
                                               .override(
-                                                fontFamily: 'SFPRO',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLargeFamily,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelLargeFamily),
                                               ),
                                         ),
                                         tileColor: FlutterFlowTheme.of(context)
@@ -2424,9 +2836,16 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .labelLarge
                                               .override(
-                                                fontFamily: 'SFPRO',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLargeFamily,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelLargeFamily),
                                               ),
                                         ),
                                         tileColor: FlutterFlowTheme.of(context)
@@ -2472,9 +2891,16 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .labelLarge
                                               .override(
-                                                fontFamily: 'SFPRO',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLargeFamily,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelLargeFamily),
                                               ),
                                         ),
                                         tileColor: FlutterFlowTheme.of(context)
@@ -2508,11 +2934,18 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'SFPRO',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMediumFamily,
                                                 letterSpacing: 0.0,
                                                 decoration:
                                                     TextDecoration.underline,
-                                                useGoogleFonts: false,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMediumFamily),
                                               ),
                                         ),
                                         Padding(
@@ -2571,12 +3004,16 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .titleLarge
                                       .override(
-                                        fontFamily: 'SFPRO',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .titleLargeFamily,
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryText,
                                         letterSpacing: 0.0,
                                         decoration: TextDecoration.underline,
-                                        useGoogleFonts: false,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .titleLargeFamily),
                                       ),
                                 ),
                               ],
@@ -2597,10 +3034,14 @@ class _FiltersModalWidgetState extends State<FiltersModalWidget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'SFPRO',
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .titleSmallFamily,
                                     color: Colors.white,
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .titleSmallFamily),
                                   ),
                               elevation: 3.0,
                               borderSide: BorderSide(

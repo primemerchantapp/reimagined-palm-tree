@@ -29,6 +29,8 @@ class _NoTripBookedModalWidgetState extends State<NoTripBookedModalWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => NoTripBookedModalModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -74,9 +76,11 @@ class _NoTripBookedModalWidgetState extends State<NoTripBookedModalWidget> {
                     'No trips booked .. yet!',
                     textAlign: TextAlign.center,
                     style: FlutterFlowTheme.of(context).labelLarge.override(
-                          fontFamily: 'SFPRO',
+                          fontFamily:
+                              FlutterFlowTheme.of(context).labelLargeFamily,
                           letterSpacing: 0.0,
-                          useGoogleFonts: false,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context).labelLargeFamily),
                         ),
                   ),
                 ),
@@ -91,10 +95,12 @@ class _NoTripBookedModalWidgetState extends State<NoTripBookedModalWidget> {
                     'Time to dust off your bags and start planning your next adventure',
                     textAlign: TextAlign.center,
                     style: FlutterFlowTheme.of(context).labelMedium.override(
-                          fontFamily: 'SFPRO',
+                          fontFamily:
+                              FlutterFlowTheme.of(context).labelMediumFamily,
                           color: FlutterFlowTheme.of(context).secondaryText,
                           letterSpacing: 0.0,
-                          useGoogleFonts: false,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context).labelMediumFamily),
                         ),
                   ),
                 ),
@@ -108,16 +114,15 @@ class _NoTripBookedModalWidgetState extends State<NoTripBookedModalWidget> {
               },
               text: 'Start searching',
               options: FFButtonOptions(
-                width: double.infinity,
-                height: 40.0,
                 padding: EdgeInsets.all(0.0),
                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                color: FlutterFlowTheme.of(context).accent2,
+                color: FlutterFlowTheme.of(context).primary,
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                      fontFamily: 'SFPRO',
+                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                       color: Colors.white,
                       letterSpacing: 0.0,
-                      useGoogleFonts: false,
+                      useGoogleFonts: GoogleFonts.asMap().containsKey(
+                          FlutterFlowTheme.of(context).titleSmallFamily),
                     ),
                 borderSide: BorderSide(
                   color: Colors.transparent,

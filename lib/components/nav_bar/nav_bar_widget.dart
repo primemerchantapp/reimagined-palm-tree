@@ -32,6 +32,8 @@ class _NavBarWidgetState extends State<NavBarWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => NavBarModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -99,11 +101,12 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                             size: 28.0,
                           ),
                           Text(
-                            'Explore',
+                            'Search',
                             style: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
-                                  fontFamily: 'SFPRO',
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .titleSmallFamily,
                                   color: valueOrDefault<Color>(
                                     widget!.activePageName == 'Explore'
                                         ? FlutterFlowTheme.of(context).accent2
@@ -113,7 +116,9 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                                   ),
                                   fontSize: 13.0,
                                   letterSpacing: 0.0,
-                                  useGoogleFonts: false,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .titleSmallFamily),
                                 ),
                           ),
                         ].divide(SizedBox(height: 5.0)),
@@ -146,7 +151,8 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
-                                  fontFamily: 'SFPRO',
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .titleSmallFamily,
                                   color: valueOrDefault<Color>(
                                     widget!.activePageName == 'Wishlist'
                                         ? FlutterFlowTheme.of(context).accent2
@@ -156,7 +162,9 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                                   ),
                                   fontSize: 13.0,
                                   letterSpacing: 0.0,
-                                  useGoogleFonts: false,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .titleSmallFamily),
                                 ),
                           ),
                         ].divide(SizedBox(height: 5.0)),
@@ -193,11 +201,12 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                             size: 28.0,
                           ),
                           Text(
-                            'Trips',
+                            'Gala',
                             style: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
-                                  fontFamily: 'SFPRO',
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .titleSmallFamily,
                                   color: valueOrDefault<Color>(
                                     widget!.activePageName == 'Trips'
                                         ? FlutterFlowTheme.of(context).accent2
@@ -207,7 +216,9 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                                   ),
                                   fontSize: 13.0,
                                   letterSpacing: 0.0,
-                                  useGoogleFonts: false,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .titleSmallFamily),
                                 ),
                           ),
                         ].divide(SizedBox(height: 5.0)),
@@ -240,7 +251,8 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
-                                  fontFamily: 'SFPRO',
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .titleSmallFamily,
                                   color: valueOrDefault<Color>(
                                     widget!.activePageName == 'Inbox'
                                         ? FlutterFlowTheme.of(context).accent2
@@ -250,7 +262,9 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                                   ),
                                   fontSize: 13.0,
                                   letterSpacing: 0.0,
-                                  useGoogleFonts: false,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .titleSmallFamily),
                                 ),
                           ),
                         ].divide(SizedBox(height: 5.0)),
@@ -291,7 +305,8 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
-                                  fontFamily: 'SFPRO',
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .titleSmallFamily,
                                   color: valueOrDefault<Color>(
                                     widget!.activePageName == 'Profile'
                                         ? FlutterFlowTheme.of(context).accent2
@@ -301,7 +316,9 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                                   ),
                                   fontSize: 13.0,
                                   letterSpacing: 0.0,
-                                  useGoogleFonts: false,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .titleSmallFamily),
                                 ),
                           ),
                         ].divide(SizedBox(height: 5.0)),

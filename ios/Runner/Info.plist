@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>Apartment Rental Free Pages  Similar to Airbnb </string>
+	<string>Gala</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -13,7 +13,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>Apartment Rental Free Pages  Similar to Airbnb </string>
+	<string>Gala</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 
@@ -22,14 +22,25 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleURLTypes</key>
-	<array>        <dict>
+	<array>
+        <dict>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>com.googleusercontent.apps.994188454347-dmdau60ccj0v2au87e7h0fnd34qdea69</string>
+                
+            </array>
+        </dict>
+
+        <dict>
         <key>CFBundleTypeRole</key>
         <string>Editor</string>
         <key>CFBundleURLName</key>
-        <string>apartmentrentalfreepagessimilartoairbnb.com</string>
+        <string>gala.com</string>
         <key>CFBundleURLSchemes</key>
         <array>
-        <string>apartmentrentalfreepagessimilartoairbnb</string>
+        <string>gala</string>
         </array>
         </dict>
     </array>

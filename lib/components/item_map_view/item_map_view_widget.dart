@@ -28,6 +28,8 @@ class _ItemMapViewWidgetState extends State<ItemMapViewWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => ItemMapViewModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -153,14 +155,18 @@ class _ItemMapViewWidgetState extends State<ItemMapViewWidget> {
                         ),
                         Text(
                           _model.mapView ? 'List View' : 'Map View',
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'SFPRO',
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    letterSpacing: 0.0,
-                                    useGoogleFonts: false,
-                                  ),
+                          style: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .bodyMediumFamily,
+                                color: FlutterFlowTheme.of(context)
+                                    .primaryBackground,
+                                letterSpacing: 0.0,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .bodyMediumFamily),
+                              ),
                         ),
                       ],
                     ),

@@ -28,6 +28,8 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => TripsLogedModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -93,9 +95,17 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                           context)
                                                       .displayMedium
                                                       .override(
-                                                        fontFamily: 'SFPRO',
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .displayMediumFamily,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .displayMediumFamily),
                                                       ),
                                                 ),
                                               ),
@@ -123,12 +133,16 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                                   .of(context)
                                                               .headlineSmall
                                                               .override(
-                                                                fontFamily:
-                                                                    'SFPRO',
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineSmallFamily,
                                                                 letterSpacing:
                                                                     0.0,
-                                                                useGoogleFonts:
-                                                                    false,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .headlineSmallFamily),
                                                               ),
                                                         ),
                                                       ),
@@ -292,9 +306,9 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                                                 Text(
                                                                                   'In 2 weeks',
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: 'SFPRO',
+                                                                                        fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                         letterSpacing: 0.0,
-                                                                                        useGoogleFonts: false,
+                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                       ),
                                                                                 ),
                                                                               ],
@@ -334,9 +348,9 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .headlineLarge
                                                                               .override(
-                                                                                fontFamily: 'SFPRO',
+                                                                                fontFamily: FlutterFlowTheme.of(context).headlineLargeFamily,
                                                                                 letterSpacing: 0.0,
-                                                                                useGoogleFonts: false,
+                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineLargeFamily),
                                                                               ),
                                                                         ),
                                                                       ),
@@ -356,9 +370,9 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .labelMedium
                                                                               .override(
-                                                                                fontFamily: 'SFPRO',
+                                                                                fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                 letterSpacing: 0.0,
-                                                                                useGoogleFonts: false,
+                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                               ),
                                                                         ),
                                                                       ),
@@ -401,11 +415,11 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                                           .headlineSmall
                                                                           .override(
                                                                             fontFamily:
-                                                                                'SFPRO',
+                                                                                FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
                                                                             useGoogleFonts:
-                                                                                false,
+                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                           ),
                                                                     ),
                                                                   ),
@@ -441,9 +455,9 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                                                 TextSpan(
                                                                                   text: '207 Entire rental unit hosted by Stay & Fun',
                                                                                   style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                        fontFamily: 'SFPRO',
+                                                                                        fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                                         letterSpacing: 0.0,
-                                                                                        useGoogleFonts: false,
+                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                                       ),
                                                                                 ),
                                                                                 TextSpan(
@@ -453,17 +467,17 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                                                 TextSpan(
                                                                                   text: 'Vietnam',
                                                                                   style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                        fontFamily: 'SFPRO',
+                                                                                        fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                         color: FlutterFlowTheme.of(context).secondaryText,
                                                                                         letterSpacing: 0.0,
-                                                                                        useGoogleFonts: false,
+                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                       ),
                                                                                 )
                                                                               ],
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'SFPRO',
+                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: false,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                   ),
                                                                             ),
                                                                             maxLines:
@@ -513,11 +527,14 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                                     .labelLarge
                                                                     .override(
                                                                       fontFamily:
-                                                                          'SFPRO',
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .labelLargeFamily,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      useGoogleFonts:
-                                                                          false,
+                                                                      useGoogleFonts: GoogleFonts
+                                                                              .asMap()
+                                                                          .containsKey(
+                                                                              FlutterFlowTheme.of(context).labelLargeFamily),
                                                                     ),
                                                               ),
                                                             ),
@@ -583,9 +600,9 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                                             Text(
                                                                               'Just for you',
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'SFPRO',
+                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: false,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                   ),
                                                                             ),
                                                                           ],
@@ -597,10 +614,10 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                                             Text(
                                                                               '18 experineces',
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: 'SFPRO',
+                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                     color: FlutterFlowTheme.of(context).secondaryText,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: false,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                   ),
                                                                             ),
                                                                           ],
@@ -661,9 +678,9 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                                             Text(
                                                                               'Just for you',
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'SFPRO',
+                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: false,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                   ),
                                                                             ),
                                                                           ],
@@ -675,10 +692,10 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                                             Text(
                                                                               '18 experineces',
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: 'SFPRO',
+                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                     color: FlutterFlowTheme.of(context).secondaryText,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: false,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                   ),
                                                                             ),
                                                                           ],
@@ -729,9 +746,9 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                                           Text(
                                                                             'Just for you',
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'SFPRO',
+                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                   letterSpacing: 0.0,
-                                                                                  useGoogleFonts: false,
+                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                 ),
                                                                           ),
                                                                         ],
@@ -743,10 +760,10 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                                           Text(
                                                                             '18 experineces',
                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                  fontFamily: 'SFPRO',
+                                                                                  fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                   color: FlutterFlowTheme.of(context).secondaryText,
                                                                                   letterSpacing: 0.0,
-                                                                                  useGoogleFonts: false,
+                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                 ),
                                                                           ),
                                                                         ],
@@ -805,7 +822,8 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                                     .bodyMedium
                                                                     .override(
                                                                       fontFamily:
-                                                                          'SFPRO',
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .secondaryText,
@@ -814,8 +832,10 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .bold,
-                                                                      useGoogleFonts:
-                                                                          false,
+                                                                      useGoogleFonts: GoogleFonts
+                                                                              .asMap()
+                                                                          .containsKey(
+                                                                              FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                     ),
                                                               ),
                                                               TextSpan(
@@ -831,14 +851,17 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                                     .labelSmall
                                                                     .override(
                                                                       fontFamily:
-                                                                          'SFPRO',
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .labelSmallFamily,
                                                                       letterSpacing:
                                                                           0.0,
                                                                       decoration:
                                                                           TextDecoration
                                                                               .underline,
-                                                                      useGoogleFonts:
-                                                                          false,
+                                                                      useGoogleFonts: GoogleFonts
+                                                                              .asMap()
+                                                                          .containsKey(
+                                                                              FlutterFlowTheme.of(context).labelSmallFamily),
                                                                     ),
                                                               )
                                                             ],
@@ -846,15 +869,19 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                                     .of(context)
                                                                 .bodyLarge
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'SFPRO',
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyLargeFamily,
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryText,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts:
-                                                                      false,
+                                                                  useGoogleFonts: GoogleFonts
+                                                                          .asMap()
+                                                                      .containsKey(
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyLargeFamily),
                                                                 ),
                                                           ),
                                                         ),
@@ -916,9 +943,9 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyLarge
                                                                               .override(
-                                                                                fontFamily: 'SFPRO',
+                                                                                fontFamily: FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                                 letterSpacing: 0.0,
-                                                                                useGoogleFonts: false,
+                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyLargeFamily),
                                                                               ),
                                                                         ),
                                                                       ),
@@ -938,10 +965,10 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                                             TextSpan(
                                                                               text: 'Quan 1',
                                                                               style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                    fontFamily: 'SFPRO',
+                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                                     color: FlutterFlowTheme.of(context).secondaryText,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: false,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyLargeFamily),
                                                                                   ),
                                                                             ),
                                                                             TextSpan(
@@ -951,19 +978,19 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                                             TextSpan(
                                                                               text: 'Feb 17-18, 2023',
                                                                               style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                    fontFamily: 'SFPRO',
+                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                                     color: FlutterFlowTheme.of(context).secondaryText,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: false,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyLargeFamily),
                                                                                   ),
                                                                             )
                                                                           ],
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .override(
-                                                                                fontFamily: 'SFPRO',
+                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                 letterSpacing: 0.0,
-                                                                                useGoogleFonts: false,
+                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                               ),
                                                                         ),
                                                                       ),
@@ -1050,11 +1077,14 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                                   .titleMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'SFPRO',
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .titleMediumFamily,
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    useGoogleFonts:
-                                                                        false,
+                                                                    useGoogleFonts: GoogleFonts
+                                                                            .asMap()
+                                                                        .containsKey(
+                                                                            FlutterFlowTheme.of(context).titleMediumFamily),
                                                                   ),
                                                             ),
                                                           ),
@@ -1113,9 +1143,9 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                                                 'Quan 1',
                                                                                 maxLines: 1,
                                                                                 style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                      fontFamily: 'SFPRO',
+                                                                                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      useGoogleFonts: false,
+                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -1130,10 +1160,10 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                                                 'Hosted by Stay & Fun ',
                                                                                 maxLines: 1,
                                                                                 style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                      fontFamily: 'SFPRO',
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                                       color: FlutterFlowTheme.of(context).secondaryText,
                                                                                       letterSpacing: 0.0,
-                                                                                      useGoogleFonts: false,
+                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyLargeFamily),
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -1148,10 +1178,10 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                                                 'Feb 17 - 18, 2023',
                                                                                 maxLines: 1,
                                                                                 style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                      fontFamily: 'SFPRO',
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                                       color: FlutterFlowTheme.of(context).secondaryText,
                                                                                       letterSpacing: 0.0,
-                                                                                      useGoogleFonts: false,
+                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyLargeFamily),
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -1209,7 +1239,8 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                                     .bodyMedium
                                                                     .override(
                                                                       fontFamily:
-                                                                          'SFPRO',
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .secondaryText,
@@ -1218,8 +1249,10 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .bold,
-                                                                      useGoogleFonts:
-                                                                          false,
+                                                                      useGoogleFonts: GoogleFonts
+                                                                              .asMap()
+                                                                          .containsKey(
+                                                                              FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                     ),
                                                               ),
                                                               TextSpan(
@@ -1235,14 +1268,17 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                                     .labelSmall
                                                                     .override(
                                                                       fontFamily:
-                                                                          'SFPRO',
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .labelSmallFamily,
                                                                       letterSpacing:
                                                                           0.0,
                                                                       decoration:
                                                                           TextDecoration
                                                                               .underline,
-                                                                      useGoogleFonts:
-                                                                          false,
+                                                                      useGoogleFonts: GoogleFonts
+                                                                              .asMap()
+                                                                          .containsKey(
+                                                                              FlutterFlowTheme.of(context).labelSmallFamily),
                                                                     ),
                                                               )
                                                             ],
@@ -1250,15 +1286,19 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                                                     .of(context)
                                                                 .bodyLarge
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'SFPRO',
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyLargeFamily,
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryText,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts:
-                                                                      false,
+                                                                  useGoogleFonts: GoogleFonts
+                                                                          .asMap()
+                                                                      .containsKey(
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyLargeFamily),
                                                                 ),
                                                           ),
                                                         ),

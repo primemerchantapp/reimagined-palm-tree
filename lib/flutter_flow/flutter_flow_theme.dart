@@ -3,8 +3,17 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+enum DeviceSize {
+  mobile,
+  tablet,
+  desktop,
+}
+
 abstract class FlutterFlowTheme {
+  static DeviceSize deviceSize = DeviceSize.mobile;
+
   static FlutterFlowTheme of(BuildContext context) {
+    deviceSize = getDeviceSize(context);
     return LightModeTheme();
   }
 
@@ -105,7 +114,22 @@ abstract class FlutterFlowTheme {
   String get bodySmallFamily => typography.bodySmallFamily;
   TextStyle get bodySmall => typography.bodySmall;
 
-  Typography get typography => ThemeTypography(this);
+  Typography get typography => {
+        DeviceSize.mobile: MobileTypography(this),
+        DeviceSize.tablet: TabletTypography(this),
+        DeviceSize.desktop: DesktopTypography(this),
+      }[deviceSize]!;
+}
+
+DeviceSize getDeviceSize(BuildContext context) {
+  final width = MediaQuery.sizeOf(context).width;
+  if (width < 479) {
+    return DeviceSize.mobile;
+  } else if (width < 991) {
+    return DeviceSize.tablet;
+  } else {
+    return DeviceSize.desktop;
+  }
 }
 
 class LightModeTheme extends FlutterFlowTheme {
@@ -116,7 +140,7 @@ class LightModeTheme extends FlutterFlowTheme {
   @Deprecated('Use tertiary instead')
   Color get tertiaryColor => tertiary;
 
-  late Color primary = const Color(0xFFF6475F);
+  late Color primary = const Color(0xFF0449E1);
   late Color secondary = const Color(0xFF39D2C0);
   late Color tertiary = const Color(0xFFEE8B60);
   late Color alternate = const Color(0xFFE0E3E7);
@@ -133,7 +157,7 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color error = const Color(0xFFC13515);
   late Color info = const Color(0xFFFFFFFF);
 
-  late Color primary02 = Color(0xFFFF385C);
+  late Color primary02 = Color(0xFF041438);
   late Color error01 = Color(0xFFFEF8F6);
   late Color shade02p5 = Color(0x0D222222);
   late Color shade02p30 = Color(0x4D222222);
@@ -180,112 +204,336 @@ abstract class Typography {
   TextStyle get bodySmall;
 }
 
-class ThemeTypography extends Typography {
-  ThemeTypography(this.theme);
+class MobileTypography extends Typography {
+  MobileTypography(this.theme);
 
   final FlutterFlowTheme theme;
 
-  String get displayLargeFamily => 'SFPRO';
-  TextStyle get displayLarge => TextStyle(
-        fontFamily: 'SFPRO',
+  String get displayLargeFamily => 'Poppins';
+  TextStyle get displayLarge => GoogleFonts.getFont(
+        'Poppins',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 22.0,
       );
-  String get displayMediumFamily => 'SFPRO';
-  TextStyle get displayMedium => TextStyle(
-        fontFamily: 'SFPRO',
+  String get displayMediumFamily => 'Poppins';
+  TextStyle get displayMedium => GoogleFonts.getFont(
+        'Poppins',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 22.0,
       );
-  String get displaySmallFamily => 'SFPRO';
-  TextStyle get displaySmall => TextStyle(
-        fontFamily: 'SFPRO',
+  String get displaySmallFamily => 'Poppins';
+  TextStyle get displaySmall => GoogleFonts.getFont(
+        'Poppins',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 18.0,
       );
-  String get headlineLargeFamily => 'SFPRO';
-  TextStyle get headlineLarge => TextStyle(
-        fontFamily: 'SFPRO',
+  String get headlineLargeFamily => 'Poppins';
+  TextStyle get headlineLarge => GoogleFonts.getFont(
+        'Poppins',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 18.0,
       );
-  String get headlineMediumFamily => 'SFPRO';
-  TextStyle get headlineMedium => TextStyle(
-        fontFamily: 'SFPRO',
+  String get headlineMediumFamily => 'Poppins';
+  TextStyle get headlineMedium => GoogleFonts.getFont(
+        'Poppins',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 18.0,
       );
-  String get headlineSmallFamily => 'SFPRO';
-  TextStyle get headlineSmall => TextStyle(
-        fontFamily: 'SFPRO',
+  String get headlineSmallFamily => 'Poppins';
+  TextStyle get headlineSmall => GoogleFonts.getFont(
+        'Poppins',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 16.0,
       );
-  String get titleLargeFamily => 'SFPRO';
-  TextStyle get titleLarge => TextStyle(
-        fontFamily: 'SFPRO',
+  String get titleLargeFamily => 'Poppins';
+  TextStyle get titleLarge => GoogleFonts.getFont(
+        'Poppins',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 16.0,
       );
-  String get titleMediumFamily => 'SFPRO';
-  TextStyle get titleMedium => TextStyle(
-        fontFamily: 'SFPRO',
+  String get titleMediumFamily => 'Poppins';
+  TextStyle get titleMedium => GoogleFonts.getFont(
+        'Poppins',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 16.0,
       );
-  String get titleSmallFamily => 'SFPRO';
-  TextStyle get titleSmall => TextStyle(
-        fontFamily: 'SFPRO',
+  String get titleSmallFamily => 'Poppins';
+  TextStyle get titleSmall => GoogleFonts.getFont(
+        'Poppins',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 14.0,
       );
-  String get labelLargeFamily => 'SFPRO';
-  TextStyle get labelLarge => TextStyle(
-        fontFamily: 'SFPRO',
+  String get labelLargeFamily => 'Poppins';
+  TextStyle get labelLarge => GoogleFonts.getFont(
+        'Poppins',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 14.0,
       );
-  String get labelMediumFamily => 'SFPRO';
-  TextStyle get labelMedium => TextStyle(
-        fontFamily: 'SFPRO',
+  String get labelMediumFamily => 'Poppins';
+  TextStyle get labelMedium => GoogleFonts.getFont(
+        'Poppins',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 13.0,
       );
-  String get labelSmallFamily => 'SFPRO';
-  TextStyle get labelSmall => TextStyle(
-        fontFamily: 'SFPRO',
+  String get labelSmallFamily => 'Poppins';
+  TextStyle get labelSmall => GoogleFonts.getFont(
+        'Poppins',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 13.0,
       );
-  String get bodyLargeFamily => 'SFPRO';
-  TextStyle get bodyLarge => TextStyle(
-        fontFamily: 'SFPRO',
+  String get bodyLargeFamily => 'Poppins';
+  TextStyle get bodyLarge => GoogleFonts.getFont(
+        'Poppins',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 12.0,
       );
-  String get bodyMediumFamily => 'SFPRO';
-  TextStyle get bodyMedium => TextStyle(
-        fontFamily: 'SFPRO',
+  String get bodyMediumFamily => 'Poppins';
+  TextStyle get bodyMedium => GoogleFonts.getFont(
+        'Poppins',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 12.0,
       );
-  String get bodySmallFamily => 'SFPRO';
-  TextStyle get bodySmall => TextStyle(
-        fontFamily: 'SFPRO',
+  String get bodySmallFamily => 'Poppins';
+  TextStyle get bodySmall => GoogleFonts.getFont(
+        'Poppins',
+        color: theme.primaryText,
+        fontWeight: FontWeight.w600,
+        fontSize: 10.0,
+      );
+}
+
+class TabletTypography extends Typography {
+  TabletTypography(this.theme);
+
+  final FlutterFlowTheme theme;
+
+  String get displayLargeFamily => 'Poppins';
+  TextStyle get displayLarge => GoogleFonts.getFont(
+        'Poppins',
+        color: theme.primaryText,
+        fontWeight: FontWeight.normal,
+        fontSize: 22.0,
+      );
+  String get displayMediumFamily => 'Poppins';
+  TextStyle get displayMedium => GoogleFonts.getFont(
+        'Poppins',
+        color: theme.primaryText,
+        fontWeight: FontWeight.w600,
+        fontSize: 22.0,
+      );
+  String get displaySmallFamily => 'Poppins';
+  TextStyle get displaySmall => GoogleFonts.getFont(
+        'Poppins',
+        color: theme.primaryText,
+        fontWeight: FontWeight.normal,
+        fontSize: 18.0,
+      );
+  String get headlineLargeFamily => 'Poppins';
+  TextStyle get headlineLarge => GoogleFonts.getFont(
+        'Poppins',
+        color: theme.primaryText,
+        fontWeight: FontWeight.w500,
+        fontSize: 18.0,
+      );
+  String get headlineMediumFamily => 'Poppins';
+  TextStyle get headlineMedium => GoogleFonts.getFont(
+        'Poppins',
+        color: theme.primaryText,
+        fontWeight: FontWeight.w600,
+        fontSize: 18.0,
+      );
+  String get headlineSmallFamily => 'Poppins';
+  TextStyle get headlineSmall => GoogleFonts.getFont(
+        'Poppins',
+        color: theme.primaryText,
+        fontWeight: FontWeight.w500,
+        fontSize: 16.0,
+      );
+  String get titleLargeFamily => 'Poppins';
+  TextStyle get titleLarge => GoogleFonts.getFont(
+        'Poppins',
+        color: theme.primaryText,
+        fontWeight: FontWeight.normal,
+        fontSize: 16.0,
+      );
+  String get titleMediumFamily => 'Poppins';
+  TextStyle get titleMedium => GoogleFonts.getFont(
+        'Poppins',
+        color: theme.primaryText,
+        fontWeight: FontWeight.w600,
+        fontSize: 16.0,
+      );
+  String get titleSmallFamily => 'Poppins';
+  TextStyle get titleSmall => GoogleFonts.getFont(
+        'Poppins',
+        color: theme.primaryText,
+        fontWeight: FontWeight.normal,
+        fontSize: 14.0,
+      );
+  String get labelLargeFamily => 'Poppins';
+  TextStyle get labelLarge => GoogleFonts.getFont(
+        'Poppins',
+        color: theme.primaryText,
+        fontWeight: FontWeight.w600,
+        fontSize: 14.0,
+      );
+  String get labelMediumFamily => 'Poppins';
+  TextStyle get labelMedium => GoogleFonts.getFont(
+        'Poppins',
+        color: theme.primaryText,
+        fontWeight: FontWeight.normal,
+        fontSize: 13.0,
+      );
+  String get labelSmallFamily => 'Poppins';
+  TextStyle get labelSmall => GoogleFonts.getFont(
+        'Poppins',
+        color: theme.primaryText,
+        fontWeight: FontWeight.w600,
+        fontSize: 13.0,
+      );
+  String get bodyLargeFamily => 'Poppins';
+  TextStyle get bodyLarge => GoogleFonts.getFont(
+        'Poppins',
+        color: theme.primaryText,
+        fontWeight: FontWeight.normal,
+        fontSize: 12.0,
+      );
+  String get bodyMediumFamily => 'Poppins';
+  TextStyle get bodyMedium => GoogleFonts.getFont(
+        'Poppins',
+        color: theme.primaryText,
+        fontWeight: FontWeight.w600,
+        fontSize: 12.0,
+      );
+  String get bodySmallFamily => 'Poppins';
+  TextStyle get bodySmall => GoogleFonts.getFont(
+        'Poppins',
+        color: theme.primaryText,
+        fontWeight: FontWeight.w600,
+        fontSize: 10.0,
+      );
+}
+
+class DesktopTypography extends Typography {
+  DesktopTypography(this.theme);
+
+  final FlutterFlowTheme theme;
+
+  String get displayLargeFamily => 'Poppins';
+  TextStyle get displayLarge => GoogleFonts.getFont(
+        'Poppins',
+        color: theme.primaryText,
+        fontWeight: FontWeight.normal,
+        fontSize: 22.0,
+      );
+  String get displayMediumFamily => 'Poppins';
+  TextStyle get displayMedium => GoogleFonts.getFont(
+        'Poppins',
+        color: theme.primaryText,
+        fontWeight: FontWeight.w600,
+        fontSize: 22.0,
+      );
+  String get displaySmallFamily => 'Poppins';
+  TextStyle get displaySmall => GoogleFonts.getFont(
+        'Poppins',
+        color: theme.primaryText,
+        fontWeight: FontWeight.normal,
+        fontSize: 18.0,
+      );
+  String get headlineLargeFamily => 'Poppins';
+  TextStyle get headlineLarge => GoogleFonts.getFont(
+        'Poppins',
+        color: theme.primaryText,
+        fontWeight: FontWeight.w500,
+        fontSize: 18.0,
+      );
+  String get headlineMediumFamily => 'Poppins';
+  TextStyle get headlineMedium => GoogleFonts.getFont(
+        'Poppins',
+        color: theme.primaryText,
+        fontWeight: FontWeight.w600,
+        fontSize: 18.0,
+      );
+  String get headlineSmallFamily => 'Poppins';
+  TextStyle get headlineSmall => GoogleFonts.getFont(
+        'Poppins',
+        color: theme.primaryText,
+        fontWeight: FontWeight.w500,
+        fontSize: 16.0,
+      );
+  String get titleLargeFamily => 'Poppins';
+  TextStyle get titleLarge => GoogleFonts.getFont(
+        'Poppins',
+        color: theme.primaryText,
+        fontWeight: FontWeight.normal,
+        fontSize: 16.0,
+      );
+  String get titleMediumFamily => 'Poppins';
+  TextStyle get titleMedium => GoogleFonts.getFont(
+        'Poppins',
+        color: theme.primaryText,
+        fontWeight: FontWeight.w600,
+        fontSize: 16.0,
+      );
+  String get titleSmallFamily => 'Poppins';
+  TextStyle get titleSmall => GoogleFonts.getFont(
+        'Poppins',
+        color: theme.primaryText,
+        fontWeight: FontWeight.normal,
+        fontSize: 14.0,
+      );
+  String get labelLargeFamily => 'Poppins';
+  TextStyle get labelLarge => GoogleFonts.getFont(
+        'Poppins',
+        color: theme.primaryText,
+        fontWeight: FontWeight.w600,
+        fontSize: 14.0,
+      );
+  String get labelMediumFamily => 'Poppins';
+  TextStyle get labelMedium => GoogleFonts.getFont(
+        'Poppins',
+        color: theme.primaryText,
+        fontWeight: FontWeight.normal,
+        fontSize: 13.0,
+      );
+  String get labelSmallFamily => 'Poppins';
+  TextStyle get labelSmall => GoogleFonts.getFont(
+        'Poppins',
+        color: theme.primaryText,
+        fontWeight: FontWeight.w600,
+        fontSize: 13.0,
+      );
+  String get bodyLargeFamily => 'Poppins';
+  TextStyle get bodyLarge => GoogleFonts.getFont(
+        'Poppins',
+        color: theme.primaryText,
+        fontWeight: FontWeight.normal,
+        fontSize: 12.0,
+      );
+  String get bodyMediumFamily => 'Poppins';
+  TextStyle get bodyMedium => GoogleFonts.getFont(
+        'Poppins',
+        color: theme.primaryText,
+        fontWeight: FontWeight.w600,
+        fontSize: 12.0,
+      );
+  String get bodySmallFamily => 'Poppins';
+  TextStyle get bodySmall => GoogleFonts.getFont(
+        'Poppins',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 10.0,

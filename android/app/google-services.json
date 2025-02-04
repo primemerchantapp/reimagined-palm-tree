@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "994188454347",
+    "firebase_url": "https://apartment-rental-free-p-lh81y5-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "apartment-rental-free-p-lh81y5",
+    "storage_bucket": "apartment-rental-free-p-lh81y5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:994188454347:android:1ca90e9f8b3cc07dd86e4e",
+        "android_client_info": {
+          "package_name": "com.bookingmobileapp.gala"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "994188454347-88t4o11453nh477nmsbfhc3baidq31v0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bookingmobileapp.gala",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "994188454347-7jp3kljb2v2fcvk452mcmt9cso25sup5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9YbKs5ppIK6O8Dfp0jBSy0JTxkmMPwLw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "994188454347-7jp3kljb2v2fcvk452mcmt9cso25sup5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "994188454347-dmdau60ccj0v2au87e7h0fnd34qdea69.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.bookingmobileapp.gala"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

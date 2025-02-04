@@ -32,6 +32,8 @@ class _CardDisplayItemWidgetState extends State<CardDisplayItemWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => CardDisplayItemModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -179,9 +181,12 @@ class _CardDisplayItemWidgetState extends State<CardDisplayItemWidget> {
                       child: Text(
                         'Groveland, California',
                         style: FlutterFlowTheme.of(context).labelLarge.override(
-                              fontFamily: 'SFPRO',
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).labelLargeFamily,
                               letterSpacing: 0.0,
-                              useGoogleFonts: false,
+                              useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                  FlutterFlowTheme.of(context)
+                                      .labelLargeFamily),
                             ),
                       ),
                     ),
@@ -201,9 +206,12 @@ class _CardDisplayItemWidgetState extends State<CardDisplayItemWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
-                                  fontFamily: 'SFPRO',
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .titleSmallFamily,
                                   letterSpacing: 0.0,
-                                  useGoogleFonts: false,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .titleSmallFamily),
                                 ),
                           ),
                         ),
@@ -223,11 +231,14 @@ class _CardDisplayItemWidgetState extends State<CardDisplayItemWidget> {
                           style: FlutterFlowTheme.of(context)
                               .titleSmall
                               .override(
-                                fontFamily: 'SFPRO',
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .titleSmallFamily,
                                 color:
                                     FlutterFlowTheme.of(context).secondaryText,
                                 letterSpacing: 0.0,
-                                useGoogleFonts: false,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .titleSmallFamily),
                               ),
                         ),
                       ),
@@ -246,11 +257,14 @@ class _CardDisplayItemWidgetState extends State<CardDisplayItemWidget> {
                           style: FlutterFlowTheme.of(context)
                               .titleSmall
                               .override(
-                                fontFamily: 'SFPRO',
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .titleSmallFamily,
                                 color:
                                     FlutterFlowTheme.of(context).secondaryText,
                                 letterSpacing: 0.0,
-                                useGoogleFonts: false,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .titleSmallFamily),
                               ),
                         ),
                       ),
@@ -272,9 +286,13 @@ class _CardDisplayItemWidgetState extends State<CardDisplayItemWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'SFPRO',
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .titleSmallFamily,
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .titleSmallFamily),
                                   ),
                             ),
                             TextSpan(
@@ -285,11 +303,14 @@ class _CardDisplayItemWidgetState extends State<CardDisplayItemWidget> {
                           style: FlutterFlowTheme.of(context)
                               .titleSmall
                               .override(
-                                fontFamily: 'SFPRO',
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .titleSmallFamily,
                                 color:
                                     FlutterFlowTheme.of(context).secondaryText,
                                 letterSpacing: 0.0,
-                                useGoogleFonts: false,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .titleSmallFamily),
                               ),
                         ),
                       ),
