@@ -38,8 +38,6 @@ class _ProfileSettingItemsWidgetState extends State<ProfileSettingItemsWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => ProfileSettingItemsModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

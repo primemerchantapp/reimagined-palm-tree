@@ -70,8 +70,6 @@ class _Auth2CreateProfileWidgetState extends State<Auth2CreateProfileWidget>
         ],
       ),
     });
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

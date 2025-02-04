@@ -32,8 +32,6 @@ class _CardDisplayItemWidgetState extends State<CardDisplayItemWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => CardDisplayItemModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

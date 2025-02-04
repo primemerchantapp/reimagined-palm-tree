@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'explore_model.dart';
 export 'explore_model.dart';
 
@@ -36,7 +37,6 @@ class _ExploreWidgetState extends State<ExploreWidget>
       length: 4,
       initialIndex: 0,
     )..addListener(() => safeSetState(() {}));
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -113,16 +113,21 @@ class _ExploreWidgetState extends State<ExploreWidget>
                                         enableDrag: false,
                                         context: context,
                                         builder: (context) {
-                                          return GestureDetector(
-                                            onTap: () {
-                                              FocusScope.of(context).unfocus();
-                                              FocusManager.instance.primaryFocus
-                                                  ?.unfocus();
-                                            },
-                                            child: Padding(
-                                              padding: MediaQuery.viewInsetsOf(
-                                                  context),
-                                              child: StayModalWidget(),
+                                          return WebViewAware(
+                                            child: GestureDetector(
+                                              onTap: () {
+                                                FocusScope.of(context)
+                                                    .unfocus();
+                                                FocusManager
+                                                    .instance.primaryFocus
+                                                    ?.unfocus();
+                                              },
+                                              child: Padding(
+                                                padding:
+                                                    MediaQuery.viewInsetsOf(
+                                                        context),
+                                                child: StayModalWidget(),
+                                              ),
                                             ),
                                           );
                                         },
@@ -152,19 +157,21 @@ class _ExploreWidgetState extends State<ExploreWidget>
                                           enableDrag: false,
                                           context: context,
                                           builder: (context) {
-                                            return GestureDetector(
-                                              onTap: () {
-                                                FocusScope.of(context)
-                                                    .unfocus();
-                                                FocusManager
-                                                    .instance.primaryFocus
-                                                    ?.unfocus();
-                                              },
-                                              child: Padding(
-                                                padding:
-                                                    MediaQuery.viewInsetsOf(
-                                                        context),
-                                                child: StayModalWidget(),
+                                            return WebViewAware(
+                                              child: GestureDetector(
+                                                onTap: () {
+                                                  FocusScope.of(context)
+                                                      .unfocus();
+                                                  FocusManager
+                                                      .instance.primaryFocus
+                                                      ?.unfocus();
+                                                },
+                                                child: Padding(
+                                                  padding:
+                                                      MediaQuery.viewInsetsOf(
+                                                          context),
+                                                  child: StayModalWidget(),
+                                                ),
                                               ),
                                             );
                                           },
@@ -276,16 +283,21 @@ class _ExploreWidgetState extends State<ExploreWidget>
                                         enableDrag: false,
                                         context: context,
                                         builder: (context) {
-                                          return GestureDetector(
-                                            onTap: () {
-                                              FocusScope.of(context).unfocus();
-                                              FocusManager.instance.primaryFocus
-                                                  ?.unfocus();
-                                            },
-                                            child: Padding(
-                                              padding: MediaQuery.viewInsetsOf(
-                                                  context),
-                                              child: FiltersModalWidget(),
+                                          return WebViewAware(
+                                            child: GestureDetector(
+                                              onTap: () {
+                                                FocusScope.of(context)
+                                                    .unfocus();
+                                                FocusManager
+                                                    .instance.primaryFocus
+                                                    ?.unfocus();
+                                              },
+                                              child: Padding(
+                                                padding:
+                                                    MediaQuery.viewInsetsOf(
+                                                        context),
+                                                child: FiltersModalWidget(),
+                                              ),
                                             ),
                                           );
                                         },

@@ -28,8 +28,6 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => TripsLogedModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

@@ -29,8 +29,6 @@ class _ReviewFiveWidgetState extends State<ReviewFiveWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => ReviewFiveModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

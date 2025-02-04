@@ -31,8 +31,6 @@ class _GuestsModalWidgetState extends State<GuestsModalWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => GuestsModalModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

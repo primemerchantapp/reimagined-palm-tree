@@ -77,8 +77,6 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
         ],
       ),
     });
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

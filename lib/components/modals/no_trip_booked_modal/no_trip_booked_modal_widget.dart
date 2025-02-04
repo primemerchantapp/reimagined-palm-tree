@@ -29,8 +29,6 @@ class _NoTripBookedModalWidgetState extends State<NoTripBookedModalWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => NoTripBookedModalModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

@@ -116,18 +116,20 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                     children: [
                       Padding(
                         padding: EdgeInsets.all(4.0),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(60.0),
-                          child: CachedNetworkImage(
-                            fadeInDuration: Duration(milliseconds: 200),
-                            fadeOutDuration: Duration(milliseconds: 200),
-                            imageUrl: valueOrDefault<String>(
-                              currentUserPhoto,
-                              'https://images.unsplash.com/photo-1499887142886-791eca5918cd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxN3x8dXNlcnxlbnwwfHx8fDE2OTc4MjQ2MjZ8MA&ixlib=rb-4.0.3&q=80&w=400',
+                        child: AuthUserStreamWidget(
+                          builder: (context) => ClipRRect(
+                            borderRadius: BorderRadius.circular(60.0),
+                            child: CachedNetworkImage(
+                              fadeInDuration: Duration(milliseconds: 200),
+                              fadeOutDuration: Duration(milliseconds: 200),
+                              imageUrl: valueOrDefault<String>(
+                                currentUserPhoto,
+                                'https://images.unsplash.com/photo-1499887142886-791eca5918cd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxN3x8dXNlcnxlbnwwfHx8fDE2OTc4MjQ2MjZ8MA&ixlib=rb-4.0.3&q=80&w=400',
+                              ),
+                              width: 300.0,
+                              height: 200.0,
+                              fit: BoxFit.cover,
                             ),
-                            width: 300.0,
-                            height: 200.0,
-                            fit: BoxFit.cover,
                           ),
                         ),
                       ),
@@ -187,78 +189,81 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
           ),
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 12.0),
-            child: TextFormField(
-              controller: _model.yourNameTextController,
-              focusNode: _model.yourNameFocusNode,
-              autofillHints: [AutofillHints.name],
-              textCapitalization: TextCapitalization.words,
-              obscureText: false,
-              decoration: InputDecoration(
-                labelText: 'Full Name',
-                labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                      fontFamily:
-                          FlutterFlowTheme.of(context).labelMediumFamily,
-                      letterSpacing: 0.0,
-                      useGoogleFonts: GoogleFonts.asMap().containsKey(
-                          FlutterFlowTheme.of(context).labelMediumFamily),
+            child: AuthUserStreamWidget(
+              builder: (context) => TextFormField(
+                controller: _model.yourNameTextController,
+                focusNode: _model.yourNameFocusNode,
+                autofillHints: [AutofillHints.name],
+                textCapitalization: TextCapitalization.words,
+                obscureText: false,
+                decoration: InputDecoration(
+                  labelText: 'Full Name',
+                  labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                        fontFamily:
+                            FlutterFlowTheme.of(context).labelMediumFamily,
+                        letterSpacing: 0.0,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).labelMediumFamily),
+                      ),
+                  hintText: 'Your full name...',
+                  hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                        fontFamily:
+                            FlutterFlowTheme.of(context).labelMediumFamily,
+                        letterSpacing: 0.0,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).labelMediumFamily),
+                      ),
+                  errorStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily:
+                            FlutterFlowTheme.of(context).bodyMediumFamily,
+                        color: FlutterFlowTheme.of(context).error,
+                        letterSpacing: 0.0,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).bodyMediumFamily),
+                      ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: FlutterFlowTheme.of(context).alternate,
+                      width: 2.0,
                     ),
-                hintText: 'Your full name...',
-                hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                      fontFamily:
-                          FlutterFlowTheme.of(context).labelMediumFamily,
-                      letterSpacing: 0.0,
-                      useGoogleFonts: GoogleFonts.asMap().containsKey(
-                          FlutterFlowTheme.of(context).labelMediumFamily),
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: FlutterFlowTheme.of(context).primary,
+                      width: 2.0,
                     ),
-                errorStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                  errorBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
                       color: FlutterFlowTheme.of(context).error,
+                      width: 2.0,
+                    ),
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                  focusedErrorBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: FlutterFlowTheme.of(context).error,
+                      width: 2.0,
+                    ),
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                  filled: true,
+                  fillColor: FlutterFlowTheme.of(context).primaryBackground,
+                  contentPadding:
+                      EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 12.0),
+                ),
+                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                       letterSpacing: 0.0,
                       useGoogleFonts: GoogleFonts.asMap().containsKey(
                           FlutterFlowTheme.of(context).bodyMediumFamily),
                     ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: FlutterFlowTheme.of(context).alternate,
-                    width: 2.0,
-                  ),
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: FlutterFlowTheme.of(context).primary,
-                    width: 2.0,
-                  ),
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                errorBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: FlutterFlowTheme.of(context).error,
-                    width: 2.0,
-                  ),
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                focusedErrorBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: FlutterFlowTheme.of(context).error,
-                    width: 2.0,
-                  ),
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                filled: true,
-                fillColor: FlutterFlowTheme.of(context).primaryBackground,
-                contentPadding:
-                    EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 12.0),
+                cursorColor: FlutterFlowTheme.of(context).primary,
+                validator:
+                    _model.yourNameTextControllerValidator.asValidator(context),
               ),
-              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                    letterSpacing: 0.0,
-                    useGoogleFonts: GoogleFonts.asMap().containsKey(
-                        FlutterFlowTheme.of(context).bodyMediumFamily),
-                  ),
-              cursorColor: FlutterFlowTheme.of(context).primary,
-              validator:
-                  _model.yourNameTextControllerValidator.asValidator(context),
             ),
           ),
           Padding(
@@ -391,7 +396,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                 text: widget!.confirmButtonText,
                 options: FFButtonOptions(
                   width: double.infinity,
-                  height: 44.0,
+                  height: 50.0,
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   iconPadding:
                       EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
@@ -399,6 +404,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                         fontFamily:
                             FlutterFlowTheme.of(context).titleSmallFamily,
+                        color: FlutterFlowTheme.of(context).primaryBackground,
                         letterSpacing: 0.0,
                         useGoogleFonts: GoogleFonts.asMap().containsKey(
                             FlutterFlowTheme.of(context).titleSmallFamily),
@@ -408,7 +414,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                     color: Colors.transparent,
                     width: 1.0,
                   ),
-                  borderRadius: BorderRadius.circular(12.0),
+                  borderRadius: BorderRadius.circular(8.0),
                 ),
               ),
             ),

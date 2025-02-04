@@ -35,8 +35,6 @@ class _GuestsItemWidgetState extends State<GuestsItemWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => GuestsItemModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

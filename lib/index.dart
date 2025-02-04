@@ -16,3 +16,5 @@ export '/account_profile_creation/auth_2_profile/auth2_profile_widget.dart'
     show Auth2ProfileWidget;
 export '/account_profile_creation/auth_2_edit_profile/auth2_edit_profile_widget.dart'
     show Auth2EditProfileWidget;
+export '/register/register_widget.dart' show RegisterWidget;
+export '/home1/home1_widget.dart' show Home1Widget;

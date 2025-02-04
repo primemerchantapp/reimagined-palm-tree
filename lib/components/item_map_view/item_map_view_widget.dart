@@ -28,8 +28,6 @@ class _ItemMapViewWidgetState extends State<ItemMapViewWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => ItemMapViewModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

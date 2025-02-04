@@ -82,13 +82,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? ExploreWidget() : Auth2CreateWidget(),
+          appStateNotifier.loggedIn ? ExploreWidget() : Home1Widget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? ExploreWidget() : Auth2CreateWidget(),
+              appStateNotifier.loggedIn ? ExploreWidget() : Home1Widget(),
         ),
         FFRoute(
           name: 'Explore',
@@ -139,6 +139,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'auth_2_EditProfile',
           path: '/auth2EditProfile',
           builder: (context, params) => Auth2EditProfileWidget(),
+        ),
+        FFRoute(
+          name: 'register',
+          path: '/register',
+          builder: (context, params) => RegisterWidget(),
+        ),
+        FFRoute(
+          name: 'Home1',
+          path: '/home1',
+          builder: (context, params) => Home1Widget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -309,7 +319,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/auth2Create';
+            return '/home1';
           }
           return null;
         },
@@ -323,19 +333,17 @@ class FFRoute {
                 )
               : builder(context, ffParams);
           final child = appStateNotifier.loading
-              ? isWeb
-                  ? Container()
-                  : Container(
-                      color: FlutterFlowTheme.of(context).primary,
-                      child: Center(
-                        child: Image.asset(
-                          'assets/images/playstore-icon.png',
-                          width: 300.0,
-                          height: 300.0,
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    )
+              ? Container(
+                  color: FlutterFlowTheme.of(context).primary,
+                  child: Center(
+                    child: Image.asset(
+                      'assets/images/playstore-icon.png',
+                      width: 300.0,
+                      height: 300.0,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                )
               : page;
 
           final transitionInfo = state.transitionInfo;

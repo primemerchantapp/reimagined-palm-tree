@@ -37,7 +37,6 @@ class _TaxesModalWidgetState extends State<TaxesModalWidget>
       length: 2,
       initialIndex: 0,
     )..addListener(() => safeSetState(() {}));
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

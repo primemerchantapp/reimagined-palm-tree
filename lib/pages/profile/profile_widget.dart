@@ -10,6 +10,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'profile_model.dart';
 export 'profile_model.dart';
 
@@ -29,8 +30,6 @@ class _ProfileWidgetState extends State<ProfileWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => ProfileModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -422,19 +421,21 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                               enableDrag: false,
                                               context: context,
                                               builder: (context) {
-                                                return GestureDetector(
-                                                  onTap: () {
-                                                    FocusScope.of(context)
-                                                        .unfocus();
-                                                    FocusManager
-                                                        .instance.primaryFocus
-                                                        ?.unfocus();
-                                                  },
-                                                  child: Padding(
-                                                    padding:
-                                                        MediaQuery.viewInsetsOf(
-                                                            context),
-                                                    child: TaxesModalWidget(),
+                                                return WebViewAware(
+                                                  child: GestureDetector(
+                                                    onTap: () {
+                                                      FocusScope.of(context)
+                                                          .unfocus();
+                                                      FocusManager
+                                                          .instance.primaryFocus
+                                                          ?.unfocus();
+                                                    },
+                                                    child: Padding(
+                                                      padding: MediaQuery
+                                                          .viewInsetsOf(
+                                                              context),
+                                                      child: TaxesModalWidget(),
+                                                    ),
                                                   ),
                                                 );
                                               },
