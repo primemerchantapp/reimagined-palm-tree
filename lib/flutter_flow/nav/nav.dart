@@ -82,13 +82,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? ExploreWidget() : Home1Widget(),
+          appStateNotifier.loggedIn ? ExploreWidget() : RegisterWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? ExploreWidget() : Home1Widget(),
+              appStateNotifier.loggedIn ? ExploreWidget() : RegisterWidget(),
         ),
         FFRoute(
           name: 'Explore',
@@ -141,7 +141,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => Auth2EditProfileWidget(),
         ),
         FFRoute(
-          name: 'register',
+          name: 'Register',
           path: '/register',
           builder: (context, params) => RegisterWidget(),
         ),
@@ -319,7 +319,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/home1';
+            return '/register';
           }
           return null;
         },

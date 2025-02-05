@@ -145,7 +145,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                             size: 28.0,
                           ),
                           Text(
-                            'Review',
+                            'Favorites',
                             style: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(

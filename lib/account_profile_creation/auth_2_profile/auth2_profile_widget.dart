@@ -475,7 +475,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                         await authManager.signOut();
                         GoRouter.of(context).clearRedirectLocation();
 
-                        context.goNamedAuth('Home1', context.mounted);
+                        context.goNamedAuth('Register', context.mounted);
                       },
                       text: 'Log Out',
                       options: FFButtonOptions(
