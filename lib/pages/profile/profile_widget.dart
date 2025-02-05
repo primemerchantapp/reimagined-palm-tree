@@ -1,7 +1,7 @@
-import '/components/modals/taxes_modal/taxes_modal_widget.dart';
 import '/components/nav_bar/nav_bar_widget.dart';
 import '/components/profile_setting_detail_items/profile_setting_detail_items_widget.dart';
 import '/components/profile_setting_items/profile_setting_items_widget.dart';
+import '/components/taxes_modal_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';

@@ -111,34 +111,19 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => ReviewFiveWidget(),
         ),
         FFRoute(
-          name: 'auth_2_Create',
-          path: '/auth2Create',
-          builder: (context, params) => Auth2CreateWidget(),
+          name: 'LoginEmail',
+          path: '/loginEmail',
+          builder: (context, params) => LoginEmailWidget(),
         ),
         FFRoute(
-          name: 'auth_2_Login',
-          path: '/auth2Login',
-          builder: (context, params) => Auth2LoginWidget(),
+          name: 'ForgotPassword',
+          path: '/forgotPassword',
+          builder: (context, params) => ForgotPasswordWidget(),
         ),
         FFRoute(
-          name: 'auth_2_ForgotPassword',
-          path: '/auth2ForgotPassword',
-          builder: (context, params) => Auth2ForgotPasswordWidget(),
-        ),
-        FFRoute(
-          name: 'auth_2_createProfile',
-          path: '/auth2CreateProfile',
-          builder: (context, params) => Auth2CreateProfileWidget(),
-        ),
-        FFRoute(
-          name: 'auth_2_Profile',
-          path: '/auth2Profile',
-          builder: (context, params) => Auth2ProfileWidget(),
-        ),
-        FFRoute(
-          name: 'auth_2_EditProfile',
-          path: '/auth2EditProfile',
-          builder: (context, params) => Auth2EditProfileWidget(),
+          name: 'EditProfile',
+          path: '/editProfile',
+          builder: (context, params) => EditProfileWidget(),
         ),
         FFRoute(
           name: 'Register',
@@ -149,6 +134,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Home1',
           path: '/home1',
           builder: (context, params) => Home1Widget(),
+        ),
+        FFRoute(
+          name: 'CreateviaEmail',
+          path: '/createviaEmail',
+          builder: (context, params) => CreateviaEmailWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

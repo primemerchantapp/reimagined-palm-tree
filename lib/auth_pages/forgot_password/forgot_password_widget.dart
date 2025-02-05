@@ -11,20 +11,19 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'auth2_forgot_password_model.dart';
-export 'auth2_forgot_password_model.dart';
+import 'forgot_password_model.dart';
+export 'forgot_password_model.dart';
 
-class Auth2ForgotPasswordWidget extends StatefulWidget {
-  const Auth2ForgotPasswordWidget({super.key});
+class ForgotPasswordWidget extends StatefulWidget {
+  const ForgotPasswordWidget({super.key});
 
   @override
-  State<Auth2ForgotPasswordWidget> createState() =>
-      _Auth2ForgotPasswordWidgetState();
+  State<ForgotPasswordWidget> createState() => _ForgotPasswordWidgetState();
 }
 
-class _Auth2ForgotPasswordWidgetState extends State<Auth2ForgotPasswordWidget>
+class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget>
     with TickerProviderStateMixin {
-  late Auth2ForgotPasswordModel _model;
+  late ForgotPasswordModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -33,7 +32,7 @@ class _Auth2ForgotPasswordWidgetState extends State<Auth2ForgotPasswordWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => Auth2ForgotPasswordModel());
+    _model = createModel(context, () => ForgotPasswordModel());
 
     _model.emailAddressTextController ??= TextEditingController();
     _model.emailAddressFocusNode ??= FocusNode();
@@ -215,6 +214,7 @@ class _Auth2ForgotPasswordWidgetState extends State<Auth2ForgotPasswordWidget>
                                     .override(
                                       fontFamily: FlutterFlowTheme.of(context)
                                           .labelLargeFamily,
+                                      fontSize: 12.0,
                                       letterSpacing: 0.0,
                                       useGoogleFonts: GoogleFonts.asMap()
                                           .containsKey(
@@ -329,7 +329,7 @@ class _Auth2ForgotPasswordWidgetState extends State<Auth2ForgotPasswordWidget>
                                 text: 'Send Reset Link',
                                 options: FFButtonOptions(
                                   width: double.infinity,
-                                  height: 44.0,
+                                  height: 50.0,
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   iconPadding: EdgeInsetsDirectional.fromSTEB(

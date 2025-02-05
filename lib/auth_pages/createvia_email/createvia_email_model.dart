@@ -5,16 +5,15 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:math';
 import 'dart:ui';
-import 'auth2_create_widget.dart' show Auth2CreateWidget;
+import 'createvia_email_widget.dart' show CreateviaEmailWidget;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class Auth2CreateModel extends FlutterFlowModel<Auth2CreateWidget> {
+class CreateviaEmailModel extends FlutterFlowModel<CreateviaEmailWidget> {
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for emailAddress widget.
@@ -26,10 +25,17 @@ class Auth2CreateModel extends FlutterFlowModel<Auth2CreateWidget> {
   TextEditingController? passwordTextController;
   late bool passwordVisibility;
   String? Function(BuildContext, String?)? passwordTextControllerValidator;
+  // State field(s) for passwordConfirm widget.
+  FocusNode? passwordConfirmFocusNode;
+  TextEditingController? passwordConfirmTextController;
+  late bool passwordConfirmVisibility;
+  String? Function(BuildContext, String?)?
+      passwordConfirmTextControllerValidator;
 
   @override
   void initState(BuildContext context) {
     passwordVisibility = false;
+    passwordConfirmVisibility = false;
   }
 
   @override
@@ -39,5 +45,8 @@ class Auth2CreateModel extends FlutterFlowModel<Auth2CreateWidget> {
 
     passwordFocusNode?.dispose();
     passwordTextController?.dispose();
+
+    passwordConfirmFocusNode?.dispose();
+    passwordConfirmTextController?.dispose();
   }
 }
