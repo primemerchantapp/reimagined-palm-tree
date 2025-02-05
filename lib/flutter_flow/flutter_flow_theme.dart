@@ -209,107 +209,107 @@ class MobileTypography extends Typography {
 
   final FlutterFlowTheme theme;
 
-  String get displayLargeFamily => 'Poppins';
+  String get displayLargeFamily => 'Roboto';
   TextStyle get displayLarge => GoogleFonts.getFont(
-        'Poppins',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 22.0,
       );
-  String get displayMediumFamily => 'Poppins';
+  String get displayMediumFamily => 'Roboto';
   TextStyle get displayMedium => GoogleFonts.getFont(
-        'Poppins',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 22.0,
       );
-  String get displaySmallFamily => 'Poppins';
+  String get displaySmallFamily => 'Roboto';
   TextStyle get displaySmall => GoogleFonts.getFont(
-        'Poppins',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 18.0,
       );
-  String get headlineLargeFamily => 'Poppins';
+  String get headlineLargeFamily => 'Roboto';
   TextStyle get headlineLarge => GoogleFonts.getFont(
-        'Poppins',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 18.0,
       );
-  String get headlineMediumFamily => 'Poppins';
+  String get headlineMediumFamily => 'Roboto';
   TextStyle get headlineMedium => GoogleFonts.getFont(
-        'Poppins',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 18.0,
       );
-  String get headlineSmallFamily => 'Poppins';
+  String get headlineSmallFamily => 'Roboto';
   TextStyle get headlineSmall => GoogleFonts.getFont(
-        'Poppins',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 16.0,
       );
-  String get titleLargeFamily => 'Poppins';
+  String get titleLargeFamily => 'Roboto';
   TextStyle get titleLarge => GoogleFonts.getFont(
-        'Poppins',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 16.0,
       );
-  String get titleMediumFamily => 'Poppins';
+  String get titleMediumFamily => 'Roboto';
   TextStyle get titleMedium => GoogleFonts.getFont(
-        'Poppins',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 16.0,
       );
-  String get titleSmallFamily => 'Poppins';
+  String get titleSmallFamily => 'Roboto';
   TextStyle get titleSmall => GoogleFonts.getFont(
-        'Poppins',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 14.0,
       );
-  String get labelLargeFamily => 'Poppins';
+  String get labelLargeFamily => 'Roboto';
   TextStyle get labelLarge => GoogleFonts.getFont(
-        'Poppins',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 14.0,
       );
-  String get labelMediumFamily => 'Poppins';
+  String get labelMediumFamily => 'Roboto';
   TextStyle get labelMedium => GoogleFonts.getFont(
-        'Poppins',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 13.0,
       );
-  String get labelSmallFamily => 'Poppins';
+  String get labelSmallFamily => 'Roboto';
   TextStyle get labelSmall => GoogleFonts.getFont(
-        'Poppins',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 13.0,
       );
-  String get bodyLargeFamily => 'Poppins';
+  String get bodyLargeFamily => 'Roboto';
   TextStyle get bodyLarge => GoogleFonts.getFont(
-        'Poppins',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 12.0,
       );
-  String get bodyMediumFamily => 'Poppins';
+  String get bodyMediumFamily => 'Roboto';
   TextStyle get bodyMedium => GoogleFonts.getFont(
-        'Poppins',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 12.0,
       );
-  String get bodySmallFamily => 'Poppins';
+  String get bodySmallFamily => 'Roboto';
   TextStyle get bodySmall => GoogleFonts.getFont(
-        'Poppins',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 10.0,
@@ -321,107 +321,107 @@ class TabletTypography extends Typography {
 
   final FlutterFlowTheme theme;
 
-  String get displayLargeFamily => 'Poppins';
+  String get displayLargeFamily => 'Roboto';
   TextStyle get displayLarge => GoogleFonts.getFont(
-        'Poppins',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 22.0,
       );
-  String get displayMediumFamily => 'Poppins';
+  String get displayMediumFamily => 'Roboto';
   TextStyle get displayMedium => GoogleFonts.getFont(
-        'Poppins',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 22.0,
       );
-  String get displaySmallFamily => 'Poppins';
+  String get displaySmallFamily => 'Roboto';
   TextStyle get displaySmall => GoogleFonts.getFont(
-        'Poppins',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 18.0,
       );
-  String get headlineLargeFamily => 'Poppins';
+  String get headlineLargeFamily => 'Roboto';
   TextStyle get headlineLarge => GoogleFonts.getFont(
-        'Poppins',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 18.0,
       );
-  String get headlineMediumFamily => 'Poppins';
+  String get headlineMediumFamily => 'Roboto';
   TextStyle get headlineMedium => GoogleFonts.getFont(
-        'Poppins',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 18.0,
       );
-  String get headlineSmallFamily => 'Poppins';
+  String get headlineSmallFamily => 'Roboto';
   TextStyle get headlineSmall => GoogleFonts.getFont(
-        'Poppins',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 16.0,
       );
-  String get titleLargeFamily => 'Poppins';
+  String get titleLargeFamily => 'Roboto';
   TextStyle get titleLarge => GoogleFonts.getFont(
-        'Poppins',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 16.0,
       );
-  String get titleMediumFamily => 'Poppins';
+  String get titleMediumFamily => 'Roboto';
   TextStyle get titleMedium => GoogleFonts.getFont(
-        'Poppins',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 16.0,
       );
-  String get titleSmallFamily => 'Poppins';
+  String get titleSmallFamily => 'Roboto';
   TextStyle get titleSmall => GoogleFonts.getFont(
-        'Poppins',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 14.0,
       );
-  String get labelLargeFamily => 'Poppins';
+  String get labelLargeFamily => 'Roboto';
   TextStyle get labelLarge => GoogleFonts.getFont(
-        'Poppins',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 14.0,
       );
-  String get labelMediumFamily => 'Poppins';
+  String get labelMediumFamily => 'Roboto';
   TextStyle get labelMedium => GoogleFonts.getFont(
-        'Poppins',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 13.0,
       );
-  String get labelSmallFamily => 'Poppins';
+  String get labelSmallFamily => 'Roboto';
   TextStyle get labelSmall => GoogleFonts.getFont(
-        'Poppins',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 13.0,
       );
-  String get bodyLargeFamily => 'Poppins';
+  String get bodyLargeFamily => 'Roboto';
   TextStyle get bodyLarge => GoogleFonts.getFont(
-        'Poppins',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 12.0,
       );
-  String get bodyMediumFamily => 'Poppins';
+  String get bodyMediumFamily => 'Roboto';
   TextStyle get bodyMedium => GoogleFonts.getFont(
-        'Poppins',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 12.0,
       );
-  String get bodySmallFamily => 'Poppins';
+  String get bodySmallFamily => 'Roboto';
   TextStyle get bodySmall => GoogleFonts.getFont(
-        'Poppins',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 10.0,
@@ -433,107 +433,107 @@ class DesktopTypography extends Typography {
 
   final FlutterFlowTheme theme;
 
-  String get displayLargeFamily => 'Poppins';
+  String get displayLargeFamily => 'Roboto';
   TextStyle get displayLarge => GoogleFonts.getFont(
-        'Poppins',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 22.0,
       );
-  String get displayMediumFamily => 'Poppins';
+  String get displayMediumFamily => 'Roboto';
   TextStyle get displayMedium => GoogleFonts.getFont(
-        'Poppins',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 22.0,
       );
-  String get displaySmallFamily => 'Poppins';
+  String get displaySmallFamily => 'Roboto';
   TextStyle get displaySmall => GoogleFonts.getFont(
-        'Poppins',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 18.0,
       );
-  String get headlineLargeFamily => 'Poppins';
+  String get headlineLargeFamily => 'Roboto';
   TextStyle get headlineLarge => GoogleFonts.getFont(
-        'Poppins',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 18.0,
       );
-  String get headlineMediumFamily => 'Poppins';
+  String get headlineMediumFamily => 'Roboto';
   TextStyle get headlineMedium => GoogleFonts.getFont(
-        'Poppins',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 18.0,
       );
-  String get headlineSmallFamily => 'Poppins';
+  String get headlineSmallFamily => 'Roboto';
   TextStyle get headlineSmall => GoogleFonts.getFont(
-        'Poppins',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 16.0,
       );
-  String get titleLargeFamily => 'Poppins';
+  String get titleLargeFamily => 'Roboto';
   TextStyle get titleLarge => GoogleFonts.getFont(
-        'Poppins',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 16.0,
       );
-  String get titleMediumFamily => 'Poppins';
+  String get titleMediumFamily => 'Roboto';
   TextStyle get titleMedium => GoogleFonts.getFont(
-        'Poppins',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 16.0,
       );
-  String get titleSmallFamily => 'Poppins';
+  String get titleSmallFamily => 'Roboto';
   TextStyle get titleSmall => GoogleFonts.getFont(
-        'Poppins',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 14.0,
       );
-  String get labelLargeFamily => 'Poppins';
+  String get labelLargeFamily => 'Roboto';
   TextStyle get labelLarge => GoogleFonts.getFont(
-        'Poppins',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 14.0,
       );
-  String get labelMediumFamily => 'Poppins';
+  String get labelMediumFamily => 'Roboto';
   TextStyle get labelMedium => GoogleFonts.getFont(
-        'Poppins',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 13.0,
       );
-  String get labelSmallFamily => 'Poppins';
+  String get labelSmallFamily => 'Roboto';
   TextStyle get labelSmall => GoogleFonts.getFont(
-        'Poppins',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 13.0,
       );
-  String get bodyLargeFamily => 'Poppins';
+  String get bodyLargeFamily => 'Roboto';
   TextStyle get bodyLarge => GoogleFonts.getFont(
-        'Poppins',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 12.0,
       );
-  String get bodyMediumFamily => 'Poppins';
+  String get bodyMediumFamily => 'Roboto';
   TextStyle get bodyMedium => GoogleFonts.getFont(
-        'Poppins',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 12.0,
       );
-  String get bodySmallFamily => 'Poppins';
+  String get bodySmallFamily => 'Roboto';
   TextStyle get bodySmall => GoogleFonts.getFont(
-        'Poppins',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 10.0,

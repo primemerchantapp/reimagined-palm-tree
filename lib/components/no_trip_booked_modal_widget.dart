@@ -110,9 +110,11 @@ class _NoTripBookedModalWidgetState extends State<NoTripBookedModalWidget> {
               onPressed: () {
                 print('Button pressed ...');
               },
-              text: 'Start searching',
+              text: 'Start Searching',
               options: FFButtonOptions(
-                padding: EdgeInsets.all(0.0),
+                width: 210.72,
+                height: 44.0,
+                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: FlutterFlowTheme.of(context).primary,
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
@@ -122,9 +124,7 @@ class _NoTripBookedModalWidgetState extends State<NoTripBookedModalWidget> {
                       useGoogleFonts: GoogleFonts.asMap().containsKey(
                           FlutterFlowTheme.of(context).titleSmallFamily),
                     ),
-                borderSide: BorderSide(
-                  color: Colors.transparent,
-                ),
+                elevation: 0.0,
                 borderRadius: BorderRadius.circular(8.0),
               ),
             ),

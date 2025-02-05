@@ -131,11 +131,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => RegisterWidget(),
         ),
         FFRoute(
-          name: 'Home1',
-          path: '/home1',
-          builder: (context, params) => Home1Widget(),
-        ),
-        FFRoute(
           name: 'CreateviaEmail',
           path: '/createviaEmail',
           builder: (context, params) => CreateviaEmailWidget(),
