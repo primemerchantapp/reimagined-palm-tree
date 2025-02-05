@@ -13,3 +13,4 @@ export '/auth_pages/register/register_widget.dart' show RegisterWidget;
 export '/pages/home1/home1_widget.dart' show Home1Widget;
 export '/auth_pages/createvia_email/createvia_email_widget.dart'
     show CreateviaEmailWidget;
+export '/onboarding/onboarding_widget.dart' show OnboardingWidget;

@@ -82,13 +82,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? ExploreWidget() : RegisterWidget(),
+          appStateNotifier.loggedIn ? ExploreWidget() : OnboardingWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? ExploreWidget() : RegisterWidget(),
+              appStateNotifier.loggedIn ? ExploreWidget() : OnboardingWidget(),
         ),
         FFRoute(
           name: 'Explore',
@@ -139,6 +139,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'CreateviaEmail',
           path: '/createviaEmail',
           builder: (context, params) => CreateviaEmailWidget(),
+        ),
+        FFRoute(
+          name: 'Onboarding',
+          path: '/onboarding',
+          builder: (context, params) => OnboardingWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -309,7 +314,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/register';
+            return '/onboarding';
           }
           return null;
         },
