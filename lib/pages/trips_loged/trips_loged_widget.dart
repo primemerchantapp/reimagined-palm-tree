@@ -87,7 +87,7 @@ class _TripsLogedWidgetState extends State<TripsLogedWidget> {
                                             children: [
                                               Expanded(
                                                 child: Text(
-                                                  'Trips',
+                                                  'Gala Trips',
                                                   maxLines: 1,
                                                   style: FlutterFlowTheme.of(
                                                           context)

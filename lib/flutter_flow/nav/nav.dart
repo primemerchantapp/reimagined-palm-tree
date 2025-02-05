@@ -139,6 +139,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Onboarding',
           path: '/onboarding',
           builder: (context, params) => OnboardingWidget(),
+        ),
+        FFRoute(
+          name: 'PostProperty',
+          path: '/postProperty',
+          builder: (context, params) => PostPropertyWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

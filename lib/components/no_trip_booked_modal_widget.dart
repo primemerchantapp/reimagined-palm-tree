@@ -90,7 +90,7 @@ class _NoTripBookedModalWidgetState extends State<NoTripBookedModalWidget> {
               children: [
                 Expanded(
                   child: Text(
-                    'Time to dust off your bags and start planning your next adventure',
+                    'Time to dust off your bags and start planning your next  Gala adventure',
                     textAlign: TextAlign.center,
                     style: FlutterFlowTheme.of(context).labelMedium.override(
                           fontFamily:

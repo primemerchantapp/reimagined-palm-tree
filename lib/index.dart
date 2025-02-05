@@ -12,3 +12,4 @@ export '/auth_pages/register/register_widget.dart' show RegisterWidget;
 export '/auth_pages/createvia_email/createvia_email_widget.dart'
     show CreateviaEmailWidget;
 export '/auth_pages/onboarding/onboarding_widget.dart' show OnboardingWidget;
+export '/post_property/post_property_widget.dart' show PostPropertyWidget;
