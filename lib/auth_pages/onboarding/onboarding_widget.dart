@@ -239,177 +239,16 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-        body: Column(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            ClipRRect(
-              child: Container(
-                width: double.infinity,
-                height: 420.0,
-                decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
-                ),
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Container(
-                      width: double.infinity,
-                      height: 600.0,
-                      decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
-                      ),
-                      child: MasonryGridView.builder(
-                        physics: const NeverScrollableScrollPhysics(),
-                        gridDelegate:
-                            SliverSimpleGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 3,
-                        ),
-                        crossAxisSpacing: 10.0,
-                        mainAxisSpacing: 10.0,
-                        itemCount: 11,
-                        itemBuilder: (context, index) {
-                          return [
-                            () => ClipRRect(
-                                  borderRadius: BorderRadius.only(
-                                    bottomLeft: Radius.circular(0.0),
-                                    bottomRight: Radius.circular(16.0),
-                                    topLeft: Radius.circular(0.0),
-                                    topRight: Radius.circular(16.0),
-                                  ),
-                                  child: Image.network(
-                                    'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bW91bnRhaW5zfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60',
-                                    width: 120.0,
-                                    height: 120.0,
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                            () => ClipRRect(
-                                  borderRadius: BorderRadius.circular(16.0),
-                                  child: Image.network(
-                                    'https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bW91bnRhaW5zfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60',
-                                    width: 120.0,
-                                    height: 160.0,
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                            () => ClipRRect(
-                                  borderRadius: BorderRadius.only(
-                                    bottomLeft: Radius.circular(0.0),
-                                    bottomRight: Radius.circular(16.0),
-                                    topLeft: Radius.circular(0.0),
-                                    topRight: Radius.circular(16.0),
-                                  ),
-                                  child: Image.network(
-                                    'https://picsum.photos/seed/32/600',
-                                    width: 100.0,
-                                    height: 0.0,
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                            () => ClipRRect(
-                                  borderRadius: BorderRadius.only(
-                                    bottomLeft: Radius.circular(16.0),
-                                    bottomRight: Radius.circular(0.0),
-                                    topLeft: Radius.circular(16.0),
-                                    topRight: Radius.circular(0.0),
-                                  ),
-                                  child: Image.network(
-                                    'https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bW91bnRhaW5zfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60',
-                                    width: 80.0,
-                                    height: 180.0,
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                            () => ClipRRect(
-                                  borderRadius: BorderRadius.circular(16.0),
-                                  child: Image.network(
-                                    'https://images.unsplash.com/photo-1434394354979-a235cd36269d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fG1vdW50YWluc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=700&q=60',
-                                    width: 120.0,
-                                    height: 160.0,
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                            () => ClipRRect(
-                                  borderRadius: BorderRadius.circular(16.0),
-                                  child: Image.network(
-                                    'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bW91bnRhaW5zfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60',
-                                    width: 120.0,
-                                    height: 180.0,
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                            () => ClipRRect(
-                                  borderRadius: BorderRadius.only(
-                                    bottomLeft: Radius.circular(16.0),
-                                    bottomRight: Radius.circular(0.0),
-                                    topLeft: Radius.circular(16.0),
-                                    topRight: Radius.circular(0.0),
-                                  ),
-                                  child: Image.network(
-                                    'https://images.unsplash.com/photo-1445363692815-ebcd599f7621?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fG1vdW50YWluc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=700&q=60',
-                                    width: 120.0,
-                                    height: 190.0,
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                            () => ClipRRect(
-                                  borderRadius: BorderRadius.circular(16.0),
-                                  child: Image.network(
-                                    'https://images.unsplash.com/photo-1540390769625-2fc3f8b1d50c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjN8fG1vdW50YWluc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=700&q=60',
-                                    width: 120.0,
-                                    height: 160.0,
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                            () => ClipRRect(
-                                  borderRadius: BorderRadius.circular(16.0),
-                                  child: Image.network(
-                                    'https://images.unsplash.com/photo-1443632864897-14973fa006cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzJ8fG1vdW50YWluc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=700&q=60',
-                                    width: 120.0,
-                                    height: 180.0,
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                            () => ClipRRect(
-                                  borderRadius: BorderRadius.only(
-                                    bottomLeft: Radius.circular(16.0),
-                                    bottomRight: Radius.circular(0.0),
-                                    topLeft: Radius.circular(16.0),
-                                    topRight: Radius.circular(0.0),
-                                  ),
-                                  child: Image.network(
-                                    'https://images.unsplash.com/photo-1614597396930-cd6760b99f7c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzZ8fG1vdW50YWluc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=700&q=60',
-                                    width: 120.0,
-                                    height: 190.0,
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                            () => ClipRRect(
-                                  borderRadius: BorderRadius.circular(16.0),
-                                  child: Image.network(
-                                    'https://picsum.photos/seed/32/600',
-                                    width: 120.0,
-                                    height: 160.0,
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                          ][index]();
-                        },
-                      ),
-                    ).animateOnPageLoad(
-                        animationsMap['containerOnPageLoadAnimation']!),
-                  ],
-                ),
-              ),
-            ),
-            Expanded(
-              child: Align(
-                alignment: AlignmentDirectional(0.0, 0.0),
+        body: SingleChildScrollView(
+          primary: false,
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              ClipRRect(
                 child: Container(
                   width: double.infinity,
-                  constraints: BoxConstraints(
-                    maxWidth: 670.0,
-                  ),
+                  height: 420.0,
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).secondaryBackground,
                   ),
@@ -418,309 +257,493 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                     children: [
                       Container(
                         width: double.infinity,
-                        height: 230.0,
-                        child: Stack(
-                          children: [
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 50.0),
-                              child: PageView(
-                                controller: _model.pageViewController ??=
-                                    PageController(initialPage: 0),
-                                scrollDirection: Axis.horizontal,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        48.0, 0.0, 48.0, 0.0),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Text(
-                                          'Personalized Gala Destination',
-                                          textAlign: TextAlign.center,
-                                          style: FlutterFlowTheme.of(context)
-                                              .displaySmall
-                                              .override(
-                                                fontFamily:
-                                                    FlutterFlowTheme.of(context)
-                                                        .displaySmallFamily,
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.bold,
-                                                useGoogleFonts: GoogleFonts
-                                                        .asMap()
-                                                    .containsKey(
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .displaySmallFamily),
-                                              ),
-                                        ).animateOnPageLoad(animationsMap[
-                                            'textOnPageLoadAnimation1']!),
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 16.0, 0.0, 0.0),
-                                          child: Text(
-                                            'I have some great food options here for your next Travel!',
-                                            textAlign: TextAlign.center,
-                                            style: FlutterFlowTheme.of(context)
-                                                .labelLarge
-                                                .override(
-                                                  fontFamily:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelLargeFamily,
-                                                  letterSpacing: 0.0,
-                                                  useGoogleFonts: GoogleFonts
-                                                          .asMap()
-                                                      .containsKey(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelLargeFamily),
-                                                ),
-                                          ).animateOnPageLoad(animationsMap[
-                                              'textOnPageLoadAnimation2']!),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        48.0, 0.0, 48.0, 0.0),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Text(
-                                          'Awesome Places',
-                                          textAlign: TextAlign.center,
-                                          style: FlutterFlowTheme.of(context)
-                                              .displaySmall
-                                              .override(
-                                                fontFamily:
-                                                    FlutterFlowTheme.of(context)
-                                                        .displaySmallFamily,
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.bold,
-                                                useGoogleFonts: GoogleFonts
-                                                        .asMap()
-                                                    .containsKey(
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .displaySmallFamily),
-                                              ),
-                                        ).animateOnPageLoad(animationsMap[
-                                            'textOnPageLoadAnimation3']!),
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 16.0, 0.0, 0.0),
-                                          child: Text(
-                                            'Have some fun while exploring the wonders of the Philippines!',
-                                            textAlign: TextAlign.center,
-                                            style: FlutterFlowTheme.of(context)
-                                                .labelLarge
-                                                .override(
-                                                  fontFamily:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelLargeFamily,
-                                                  letterSpacing: 0.0,
-                                                  useGoogleFonts: GoogleFonts
-                                                          .asMap()
-                                                      .containsKey(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelLargeFamily),
-                                                ),
-                                          ).animateOnPageLoad(animationsMap[
-                                              'textOnPageLoadAnimation4']!),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        48.0, 0.0, 48.0, 0.0),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Text(
-                                          'Personalized booking destination!',
-                                          textAlign: TextAlign.center,
-                                          style: FlutterFlowTheme.of(context)
-                                              .displaySmall
-                                              .override(
-                                                fontFamily:
-                                                    FlutterFlowTheme.of(context)
-                                                        .displaySmallFamily,
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.bold,
-                                                useGoogleFonts: GoogleFonts
-                                                        .asMap()
-                                                    .containsKey(
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .displaySmallFamily),
-                                              ),
-                                        ).animateOnPageLoad(animationsMap[
-                                            'textOnPageLoadAnimation5']!),
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 16.0, 0.0, 0.0),
-                                          child: Text(
-                                            'Let\'s make your journey with Gala, the most unforgetable one!',
-                                            textAlign: TextAlign.center,
-                                            style: FlutterFlowTheme.of(context)
-                                                .labelLarge
-                                                .override(
-                                                  fontFamily:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelLargeFamily,
-                                                  letterSpacing: 0.0,
-                                                  useGoogleFonts: GoogleFonts
-                                                          .asMap()
-                                                      .containsKey(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelLargeFamily),
-                                                ),
-                                          ).animateOnPageLoad(animationsMap[
-                                              'textOnPageLoadAnimation6']!),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Align(
-                              alignment: AlignmentDirectional(0.0, 1.0),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 10.0),
-                                child:
-                                    smooth_page_indicator.SmoothPageIndicator(
-                                  controller: _model.pageViewController ??=
-                                      PageController(initialPage: 0),
-                                  count: 3,
-                                  axisDirection: Axis.horizontal,
-                                  onDotClicked: (i) async {
-                                    await _model.pageViewController!
-                                        .animateToPage(
-                                      i,
-                                      duration: Duration(milliseconds: 500),
-                                      curve: Curves.ease,
-                                    );
-                                    safeSetState(() {});
-                                  },
-                                  effect:
-                                      smooth_page_indicator.ExpandingDotsEffect(
-                                    expansionFactor: 3.0,
-                                    spacing: 8.0,
-                                    radius: 16.0,
-                                    dotWidth: 8.0,
-                                    dotHeight: 8.0,
-                                    dotColor:
-                                        FlutterFlowTheme.of(context).alternate,
-                                    activeDotColor: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    paintStyle: PaintingStyle.fill,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
+                        height: 600.0,
+                        decoration: BoxDecoration(
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
                         ),
-                      ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            16.0, 12.0, 16.0, 0.0),
-                        child: FFButtonWidget(
-                          onPressed: () async {
-                            context.pushNamed('Register');
-                          },
-                          text: 'Next',
-                          options: FFButtonOptions(
-                            width: double.infinity,
-                            height: 60.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            color: FlutterFlowTheme.of(context).primary,
-                            textStyle: FlutterFlowTheme.of(context)
-                                .titleMedium
-                                .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .titleMediumFamily,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  letterSpacing: 0.0,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .titleMediumFamily),
-                                ),
-                            elevation: 4.0,
-                            borderSide: BorderSide(
-                              color: Colors.transparent,
-                              width: 1.0,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                            hoverColor:
-                                FlutterFlowTheme.of(context).primaryText,
+                        child: MasonryGridView.builder(
+                          physics: const NeverScrollableScrollPhysics(),
+                          gridDelegate:
+                              SliverSimpleGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 3,
                           ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            16.0, 12.0, 16.0, 44.0),
-                        child: FFButtonWidget(
-                          onPressed: () async {
-                            context.pushNamed('Register');
+                          crossAxisSpacing: 10.0,
+                          mainAxisSpacing: 10.0,
+                          itemCount: 11,
+                          itemBuilder: (context, index) {
+                            return [
+                              () => ClipRRect(
+                                    borderRadius: BorderRadius.only(
+                                      bottomLeft: Radius.circular(0.0),
+                                      bottomRight: Radius.circular(16.0),
+                                      topLeft: Radius.circular(0.0),
+                                      topRight: Radius.circular(16.0),
+                                    ),
+                                    child: Image.network(
+                                      'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bW91bnRhaW5zfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60',
+                                      width: 120.0,
+                                      height: 120.0,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                              () => ClipRRect(
+                                    borderRadius: BorderRadius.circular(16.0),
+                                    child: Image.network(
+                                      'https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bW91bnRhaW5zfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60',
+                                      width: 120.0,
+                                      height: 160.0,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                              () => ClipRRect(
+                                    borderRadius: BorderRadius.only(
+                                      bottomLeft: Radius.circular(0.0),
+                                      bottomRight: Radius.circular(16.0),
+                                      topLeft: Radius.circular(0.0),
+                                      topRight: Radius.circular(16.0),
+                                    ),
+                                    child: Image.network(
+                                      'https://picsum.photos/seed/32/600',
+                                      width: 100.0,
+                                      height: 0.0,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                              () => ClipRRect(
+                                    borderRadius: BorderRadius.only(
+                                      bottomLeft: Radius.circular(16.0),
+                                      bottomRight: Radius.circular(0.0),
+                                      topLeft: Radius.circular(16.0),
+                                      topRight: Radius.circular(0.0),
+                                    ),
+                                    child: Image.network(
+                                      'https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bW91bnRhaW5zfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60',
+                                      width: 80.0,
+                                      height: 180.0,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                              () => ClipRRect(
+                                    borderRadius: BorderRadius.circular(16.0),
+                                    child: Image.network(
+                                      'https://images.unsplash.com/photo-1434394354979-a235cd36269d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fG1vdW50YWluc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=700&q=60',
+                                      width: 120.0,
+                                      height: 160.0,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                              () => ClipRRect(
+                                    borderRadius: BorderRadius.circular(16.0),
+                                    child: Image.network(
+                                      'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bW91bnRhaW5zfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60',
+                                      width: 120.0,
+                                      height: 180.0,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                              () => ClipRRect(
+                                    borderRadius: BorderRadius.only(
+                                      bottomLeft: Radius.circular(16.0),
+                                      bottomRight: Radius.circular(0.0),
+                                      topLeft: Radius.circular(16.0),
+                                      topRight: Radius.circular(0.0),
+                                    ),
+                                    child: Image.network(
+                                      'https://images.unsplash.com/photo-1445363692815-ebcd599f7621?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fG1vdW50YWluc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=700&q=60',
+                                      width: 120.0,
+                                      height: 190.0,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                              () => ClipRRect(
+                                    borderRadius: BorderRadius.circular(16.0),
+                                    child: Image.network(
+                                      'https://images.unsplash.com/photo-1540390769625-2fc3f8b1d50c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjN8fG1vdW50YWluc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=700&q=60',
+                                      width: 120.0,
+                                      height: 160.0,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                              () => ClipRRect(
+                                    borderRadius: BorderRadius.circular(16.0),
+                                    child: Image.network(
+                                      'https://images.unsplash.com/photo-1443632864897-14973fa006cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzJ8fG1vdW50YWluc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=700&q=60',
+                                      width: 120.0,
+                                      height: 180.0,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                              () => ClipRRect(
+                                    borderRadius: BorderRadius.only(
+                                      bottomLeft: Radius.circular(16.0),
+                                      bottomRight: Radius.circular(0.0),
+                                      topLeft: Radius.circular(16.0),
+                                      topRight: Radius.circular(0.0),
+                                    ),
+                                    child: Image.network(
+                                      'https://images.unsplash.com/photo-1614597396930-cd6760b99f7c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzZ8fG1vdW50YWluc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=700&q=60',
+                                      width: 120.0,
+                                      height: 190.0,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                              () => ClipRRect(
+                                    borderRadius: BorderRadius.circular(16.0),
+                                    child: Image.network(
+                                      'https://picsum.photos/seed/32/600',
+                                      width: 120.0,
+                                      height: 160.0,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                            ][index]();
                           },
-                          text: 'Skip',
-                          options: FFButtonOptions(
-                            width: double.infinity,
-                            height: 60.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                            textStyle: FlutterFlowTheme.of(context)
-                                .titleLarge
-                                .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .titleLargeFamily,
-                                  letterSpacing: 0.0,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .titleLargeFamily),
-                                ),
-                            elevation: 0.0,
-                            borderSide: BorderSide(
-                              color: Colors.transparent,
-                              width: 1.0,
-                            ),
-                            borderRadius: BorderRadius.circular(50.0),
-                            hoverColor: FlutterFlowTheme.of(context).alternate,
-                          ),
                         ),
-                      ),
+                      ).animateOnPageLoad(
+                          animationsMap['containerOnPageLoadAnimation']!),
                     ],
                   ),
                 ),
               ),
-            ),
-          ],
+              Expanded(
+                child: Align(
+                  alignment: AlignmentDirectional(0.0, 0.0),
+                  child: Container(
+                    width: double.infinity,
+                    constraints: BoxConstraints(
+                      maxWidth: 670.0,
+                    ),
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                    ),
+                    child: SingleChildScrollView(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Container(
+                            width: double.infinity,
+                            height: 147.79,
+                            child: Stack(
+                              children: [
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 50.0),
+                                  child: PageView(
+                                    controller: _model.pageViewController ??=
+                                        PageController(initialPage: 0),
+                                    scrollDirection: Axis.horizontal,
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            48.0, 0.0, 48.0, 0.0),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              'Personalized Gala Destination',
+                                              textAlign: TextAlign.center,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .displaySmall
+                                                      .override(
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .displaySmallFamily,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .displaySmallFamily),
+                                                      ),
+                                            ).animateOnPageLoad(animationsMap[
+                                                'textOnPageLoadAnimation1']!),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 16.0, 0.0, 0.0),
+                                              child: Text(
+                                                'I have some great food options here for your next Travel!',
+                                                textAlign: TextAlign.center,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLargeFamily,
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLargeFamily),
+                                                        ),
+                                              ).animateOnPageLoad(animationsMap[
+                                                  'textOnPageLoadAnimation2']!),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            48.0, 0.0, 48.0, 0.0),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              'Awesome Places',
+                                              textAlign: TextAlign.center,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .displaySmall
+                                                      .override(
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .displaySmallFamily,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .displaySmallFamily),
+                                                      ),
+                                            ).animateOnPageLoad(animationsMap[
+                                                'textOnPageLoadAnimation3']!),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 16.0, 0.0, 0.0),
+                                              child: Text(
+                                                'Have some fun while exploring the wonders of the Philippines!',
+                                                textAlign: TextAlign.center,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLargeFamily,
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLargeFamily),
+                                                        ),
+                                              ).animateOnPageLoad(animationsMap[
+                                                  'textOnPageLoadAnimation4']!),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            48.0, 0.0, 48.0, 0.0),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              'Personalized booking destination!',
+                                              textAlign: TextAlign.center,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .displaySmall
+                                                      .override(
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .displaySmallFamily,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .displaySmallFamily),
+                                                      ),
+                                            ).animateOnPageLoad(animationsMap[
+                                                'textOnPageLoadAnimation5']!),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 16.0, 0.0, 0.0),
+                                              child: Text(
+                                                'Let\'s make your journey with Gala, the most unforgetable one!',
+                                                textAlign: TextAlign.center,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLargeFamily,
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLargeFamily),
+                                                        ),
+                                              ).animateOnPageLoad(animationsMap[
+                                                  'textOnPageLoadAnimation6']!),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Align(
+                                  alignment: AlignmentDirectional(0.0, 1.0),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 10.0),
+                                    child: smooth_page_indicator
+                                        .SmoothPageIndicator(
+                                      controller: _model.pageViewController ??=
+                                          PageController(initialPage: 0),
+                                      count: 3,
+                                      axisDirection: Axis.horizontal,
+                                      onDotClicked: (i) async {
+                                        await _model.pageViewController!
+                                            .animateToPage(
+                                          i,
+                                          duration: Duration(milliseconds: 500),
+                                          curve: Curves.ease,
+                                        );
+                                        safeSetState(() {});
+                                      },
+                                      effect: smooth_page_indicator
+                                          .ExpandingDotsEffect(
+                                        expansionFactor: 3.0,
+                                        spacing: 8.0,
+                                        radius: 16.0,
+                                        dotWidth: 8.0,
+                                        dotHeight: 8.0,
+                                        dotColor: FlutterFlowTheme.of(context)
+                                            .alternate,
+                                        activeDotColor:
+                                            FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                        paintStyle: PaintingStyle.fill,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                16.0, 12.0, 16.0, 0.0),
+                            child: FFButtonWidget(
+                              onPressed: () async {
+                                context.pushNamed('Register');
+                              },
+                              text: 'Next',
+                              options: FFButtonOptions(
+                                width: double.infinity,
+                                height: 60.0,
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                color: FlutterFlowTheme.of(context).primary,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .titleMedium
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .titleMediumFamily,
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      letterSpacing: 0.0,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .titleMediumFamily),
+                                    ),
+                                elevation: 4.0,
+                                borderSide: BorderSide(
+                                  color: Colors.transparent,
+                                  width: 1.0,
+                                ),
+                                borderRadius: BorderRadius.circular(8.0),
+                                hoverColor:
+                                    FlutterFlowTheme.of(context).primaryText,
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                16.0, 12.0, 16.0, 44.0),
+                            child: FFButtonWidget(
+                              onPressed: () async {
+                                context.pushNamed('Register');
+                              },
+                              text: 'Skip',
+                              options: FFButtonOptions(
+                                width: double.infinity,
+                                height: 60.0,
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                color: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .titleLarge
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .titleLargeFamily,
+                                      letterSpacing: 0.0,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .titleLargeFamily),
+                                    ),
+                                elevation: 0.0,
+                                borderSide: BorderSide(
+                                  color: Colors.transparent,
+                                  width: 1.0,
+                                ),
+                                borderRadius: BorderRadius.circular(50.0),
+                                hoverColor:
+                                    FlutterFlowTheme.of(context).alternate,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
