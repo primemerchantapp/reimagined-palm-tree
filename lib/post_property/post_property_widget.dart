@@ -12,6 +12,7 @@ import 'dart:io';
 import 'dart:ui';
 import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'post_property_model.dart';
@@ -1558,6 +1559,24 @@ class _PostPropertyWidgetState extends State<PostPropertyWidget> {
                           'updated_at':
                               supaSerialize<DateTime>(getCurrentTimestamp),
                         });
+                        await Future.delayed(
+                            const Duration(milliseconds: 3000));
+                        HapticFeedback.mediumImpact();
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              '',
+                              style: TextStyle(
+                                color: FlutterFlowTheme.of(context).primaryText,
+                              ),
+                            ),
+                            duration: Duration(milliseconds: 4000),
+                            backgroundColor:
+                                FlutterFlowTheme.of(context).secondary,
+                          ),
+                        );
+
+                        context.pushNamed('Explore');
 
                         safeSetState(() {});
                       },
