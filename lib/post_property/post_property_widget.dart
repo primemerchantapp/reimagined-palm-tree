@@ -1565,7 +1565,7 @@ class _PostPropertyWidgetState extends State<PostPropertyWidget> {
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
                             content: Text(
-                              '',
+                              'Added Successfully',
                               style: TextStyle(
                                 color: FlutterFlowTheme.of(context).primaryText,
                               ),
