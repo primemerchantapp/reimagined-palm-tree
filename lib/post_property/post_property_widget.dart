@@ -1,16 +1,23 @@
+import '/auth/firebase_auth/auth_util.dart';
+import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_place_picker.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/flutter_flow/place.dart';
+import 'dart:io';
 import 'dart:ui';
+import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'post_property_model.dart';
 export 'post_property_model.dart';
 
+/// Create a airbnb like create host or post property with all fields needed
 class PostPropertyWidget extends StatefulWidget {
   const PostPropertyWidget({super.key});
 
@@ -39,6 +46,12 @@ class _PostPropertyWidgetState extends State<PostPropertyWidget> {
 
     _model.salesPriceTextController ??= TextEditingController();
     _model.salesPriceFocusNode ??= FocusNode();
+
+    _model.textController5 ??= TextEditingController();
+    _model.textFieldFocusNode1 ??= FocusNode();
+
+    _model.textController6 ??= TextEditingController();
+    _model.textFieldFocusNode2 ??= FocusNode();
   }
 
   @override
@@ -66,7 +79,7 @@ class _PostPropertyWidgetState extends State<PostPropertyWidget> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Post New Property',
+                'Host New Property',
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
                       fontFamily:
                           FlutterFlowTheme.of(context).headlineMediumFamily,
@@ -468,121 +481,6 @@ class _PostPropertyWidgetState extends State<PostPropertyWidget> {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        Text(
-                                          'Amenities',
-                                          style: FlutterFlowTheme.of(context)
-                                              .labelMedium
-                                              .override(
-                                                fontFamily:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMediumFamily,
-                                                letterSpacing: 0.0,
-                                                useGoogleFonts: GoogleFonts
-                                                        .asMap()
-                                                    .containsKey(
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .labelMediumFamily),
-                                              ),
-                                        ),
-                                        FlutterFlowChoiceChips(
-                                          options: [
-                                            ChipData('Tops'),
-                                            ChipData('Bottoms'),
-                                            ChipData('Outerwear'),
-                                            ChipData('Jewelry'),
-                                            ChipData('Accessories'),
-                                            ChipData('Hats'),
-                                            ChipData('Shoes')
-                                          ],
-                                          onChanged: (val) => safeSetState(() =>
-                                              _model.choiceChipsValue =
-                                                  val?.firstOrNull),
-                                          selectedChipStyle: ChipStyle(
-                                            backgroundColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .primary,
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .override(
-                                                      fontFamily:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMediumFamily,
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primaryText,
-                                                      letterSpacing: 0.0,
-                                                      useGoogleFonts: GoogleFonts
-                                                              .asMap()
-                                                          .containsKey(
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMediumFamily),
-                                                    ),
-                                            iconColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .primaryBackground,
-                                            iconSize: 18.0,
-                                            elevation: 0.0,
-                                            borderColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .secondary,
-                                            borderWidth: 2.0,
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
-                                          unselectedChipStyle: ChipStyle(
-                                            backgroundColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .primaryBackground,
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .override(
-                                                      fontFamily:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMediumFamily,
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .secondaryText,
-                                                      letterSpacing: 0.0,
-                                                      useGoogleFonts: GoogleFonts
-                                                              .asMap()
-                                                          .containsKey(
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMediumFamily),
-                                                    ),
-                                            iconColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .secondaryText,
-                                            iconSize: 18.0,
-                                            elevation: 0.0,
-                                            borderColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .alternate,
-                                            borderWidth: 2.0,
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
-                                          chipSpacing: 8.0,
-                                          rowSpacing: 8.0,
-                                          multiselect: false,
-                                          initialized:
-                                              _model.choiceChipsValue != null,
-                                          alignment: WrapAlignment.start,
-                                          controller: _model
-                                                  .choiceChipsValueController ??=
-                                              FormFieldController<List<String>>(
-                                            ['Tops'],
-                                          ),
-                                          wrapped: true,
-                                        ),
                                         Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
@@ -622,7 +520,7 @@ class _PostPropertyWidgetState extends State<PostPropertyWidget> {
                                                             .words,
                                                     obscureText: false,
                                                     decoration: InputDecoration(
-                                                      labelText: '\$100.00',
+                                                      labelText: '100.00',
                                                       labelStyle:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -800,7 +698,7 @@ class _PostPropertyWidgetState extends State<PostPropertyWidget> {
                                                             .words,
                                                     obscureText: false,
                                                     decoration: InputDecoration(
-                                                      labelText: '\$50.00',
+                                                      labelText: '50.00',
                                                       labelStyle:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -809,6 +707,9 @@ class _PostPropertyWidgetState extends State<PostPropertyWidget> {
                                                                 fontFamily: FlutterFlowTheme.of(
                                                                         context)
                                                                     .labelLargeFamily,
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryText,
                                                                 letterSpacing:
                                                                     0.0,
                                                                 useGoogleFonts: GoogleFonts
@@ -998,6 +899,619 @@ class _PostPropertyWidgetState extends State<PostPropertyWidget> {
                                               ),
                                             ),
                                           ),
+                                        Text(
+                                          'Property Details',
+                                          style: FlutterFlowTheme.of(context)
+                                              .headlineSmall
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmallFamily,
+                                                letterSpacing: 0.0,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(FlutterFlowTheme
+                                                            .of(context)
+                                                        .headlineSmallFamily),
+                                              ),
+                                        ),
+                                        Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Expanded(
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    'Bedrooms',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMediumFamily,
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMediumFamily),
+                                                        ),
+                                                  ),
+                                                  TextFormField(
+                                                    controller:
+                                                        _model.textController5,
+                                                    focusNode: _model
+                                                        .textFieldFocusNode1,
+                                                    autofocus: true,
+                                                    textCapitalization:
+                                                        TextCapitalization
+                                                            .words,
+                                                    obscureText: false,
+                                                    decoration: InputDecoration(
+                                                      labelText:
+                                                          'Number of bedrooms',
+                                                      labelStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelLarge
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLargeFamily,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .labelLargeFamily),
+                                                              ),
+                                                      hintStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMediumFamily,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .labelMediumFamily),
+                                                              ),
+                                                      enabledBorder:
+                                                          OutlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .alternate,
+                                                          width: 1.0,
+                                                        ),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(12.0),
+                                                      ),
+                                                      focusedBorder:
+                                                          OutlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                          color:
+                                                              Color(0x00000000),
+                                                          width: 1.0,
+                                                        ),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(12.0),
+                                                      ),
+                                                      errorBorder:
+                                                          OutlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                          color:
+                                                              Color(0x00000000),
+                                                          width: 1.0,
+                                                        ),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(12.0),
+                                                      ),
+                                                      focusedErrorBorder:
+                                                          OutlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                          color:
+                                                              Color(0x00000000),
+                                                          width: 1.0,
+                                                        ),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(12.0),
+                                                      ),
+                                                      filled: true,
+                                                      fillColor: FlutterFlowTheme
+                                                              .of(context)
+                                                          .secondaryBackground,
+                                                      contentPadding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  16.0,
+                                                                  16.0,
+                                                                  16.0,
+                                                                  16.0),
+                                                    ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyLarge
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLargeFamily,
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyLargeFamily),
+                                                        ),
+                                                    minLines: 1,
+                                                    validator: _model
+                                                        .textController5Validator
+                                                        .asValidator(context),
+                                                  ),
+                                                ].divide(SizedBox(height: 4.0)),
+                                              ),
+                                            ),
+                                            Expanded(
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    'Bathrooms',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMediumFamily,
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMediumFamily),
+                                                        ),
+                                                  ),
+                                                  TextFormField(
+                                                    controller:
+                                                        _model.textController6,
+                                                    focusNode: _model
+                                                        .textFieldFocusNode2,
+                                                    autofocus: true,
+                                                    textCapitalization:
+                                                        TextCapitalization
+                                                            .words,
+                                                    obscureText: false,
+                                                    decoration: InputDecoration(
+                                                      labelText:
+                                                          'Number of bathrooms',
+                                                      labelStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelLarge
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLargeFamily,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .labelLargeFamily),
+                                                              ),
+                                                      hintStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMediumFamily,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .labelMediumFamily),
+                                                              ),
+                                                      enabledBorder:
+                                                          OutlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .alternate,
+                                                          width: 1.0,
+                                                        ),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(12.0),
+                                                      ),
+                                                      focusedBorder:
+                                                          OutlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                          color:
+                                                              Color(0x00000000),
+                                                          width: 1.0,
+                                                        ),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(12.0),
+                                                      ),
+                                                      errorBorder:
+                                                          OutlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                          color:
+                                                              Color(0x00000000),
+                                                          width: 1.0,
+                                                        ),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(12.0),
+                                                      ),
+                                                      focusedErrorBorder:
+                                                          OutlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                          color:
+                                                              Color(0x00000000),
+                                                          width: 1.0,
+                                                        ),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(12.0),
+                                                      ),
+                                                      filled: true,
+                                                      fillColor: FlutterFlowTheme
+                                                              .of(context)
+                                                          .secondaryBackground,
+                                                      contentPadding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  16.0,
+                                                                  16.0,
+                                                                  16.0,
+                                                                  16.0),
+                                                    ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyLarge
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLargeFamily,
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyLargeFamily),
+                                                        ),
+                                                    minLines: 1,
+                                                    validator: _model
+                                                        .textController6Validator
+                                                        .asValidator(context),
+                                                  ),
+                                                ].divide(SizedBox(height: 4.0)),
+                                              ),
+                                            ),
+                                          ].divide(SizedBox(width: 12.0)),
+                                        ),
+                                        Text(
+                                          'Location',
+                                          style: FlutterFlowTheme.of(context)
+                                              .headlineSmall
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmallFamily,
+                                                letterSpacing: 0.0,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(FlutterFlowTheme
+                                                            .of(context)
+                                                        .headlineSmallFamily),
+                                              ),
+                                        ),
+                                        FlutterFlowPlacePicker(
+                                          iOSGoogleMapsApiKey: '',
+                                          androidGoogleMapsApiKey: '',
+                                          webGoogleMapsApiKey: '',
+                                          onSelect: (place) async {
+                                            safeSetState(() => _model
+                                                .placePickerValue = place);
+                                          },
+                                          defaultText:
+                                              'Select Property Location',
+                                          icon: Icon(
+                                            Icons.place,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            size: 20.0,
+                                          ),
+                                          buttonOptions: FFButtonOptions(
+                                            width: double.infinity,
+                                            height: 50.0,
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .override(
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmallFamily,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                      letterSpacing: 0.0,
+                                                      useGoogleFonts: GoogleFonts
+                                                              .asMap()
+                                                          .containsKey(
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily),
+                                                    ),
+                                            elevation: 0.0,
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .alternate,
+                                              width: 1.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(12.0),
+                                          ),
+                                        ),
+                                        Text(
+                                          'Amenities',
+                                          style: FlutterFlowTheme.of(context)
+                                              .headlineSmall
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmallFamily,
+                                                letterSpacing: 0.0,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(FlutterFlowTheme
+                                                            .of(context)
+                                                        .headlineSmallFamily),
+                                              ),
+                                        ),
+                                        FlutterFlowChoiceChips(
+                                          options: [
+                                            ChipData('WiFi'),
+                                            ChipData('Pool'),
+                                            ChipData('Gym'),
+                                            ChipData('Parking'),
+                                            ChipData('Kitchen'),
+                                            ChipData('TV'),
+                                            ChipData('AC'),
+                                            ChipData('Heating')
+                                          ],
+                                          onChanged: (val) => safeSetState(() =>
+                                              _model.choiceChipsValue1 =
+                                                  val?.firstOrNull),
+                                          selectedChipStyle: ChipStyle(
+                                            backgroundColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primary,
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMediumFamily,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                      letterSpacing: 0.0,
+                                                      useGoogleFonts: GoogleFonts
+                                                              .asMap()
+                                                          .containsKey(
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMediumFamily),
+                                                    ),
+                                            iconColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .alternate,
+                                            iconSize: 18.0,
+                                            elevation: 0.0,
+                                            borderColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primary,
+                                            borderWidth: 1.0,
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                          unselectedChipStyle: ChipStyle(
+                                            backgroundColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .secondaryBackground,
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodySmall
+                                                    .override(
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodySmallFamily,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                      letterSpacing: 0.0,
+                                                      useGoogleFonts: GoogleFonts
+                                                              .asMap()
+                                                          .containsKey(
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodySmallFamily),
+                                                    ),
+                                            iconColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primaryText,
+                                            iconSize: 18.0,
+                                            elevation: 0.0,
+                                            borderColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .alternate,
+                                            borderWidth: 1.0,
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                          chipSpacing: 8.0,
+                                          rowSpacing: 8.0,
+                                          multiselect: false,
+                                          alignment: WrapAlignment.start,
+                                          controller: _model
+                                                  .choiceChipsValueController1 ??=
+                                              FormFieldController<List<String>>(
+                                            [],
+                                          ),
+                                          wrapped: true,
+                                        ),
+                                        Text(
+                                          'House Rules',
+                                          style: FlutterFlowTheme.of(context)
+                                              .headlineSmall
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmallFamily,
+                                                letterSpacing: 0.0,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(FlutterFlowTheme
+                                                            .of(context)
+                                                        .headlineSmallFamily),
+                                              ),
+                                        ),
+                                        FlutterFlowChoiceChips(
+                                          options: [
+                                            ChipData('No Smoking'),
+                                            ChipData('No Pets'),
+                                            ChipData('No Parties'),
+                                            ChipData('No Children')
+                                          ],
+                                          onChanged: (val) => safeSetState(() =>
+                                              _model.choiceChipsValue2 =
+                                                  val?.firstOrNull),
+                                          selectedChipStyle: ChipStyle(
+                                            backgroundColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primary,
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMediumFamily,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                      letterSpacing: 0.0,
+                                                      useGoogleFonts: GoogleFonts
+                                                              .asMap()
+                                                          .containsKey(
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMediumFamily),
+                                                    ),
+                                            iconColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .alternate,
+                                            iconSize: 18.0,
+                                            elevation: 0.0,
+                                            borderColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primary,
+                                            borderWidth: 1.0,
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                          unselectedChipStyle: ChipStyle(
+                                            backgroundColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .secondaryBackground,
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodySmall
+                                                    .override(
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodySmallFamily,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                      letterSpacing: 0.0,
+                                                      useGoogleFonts: GoogleFonts
+                                                              .asMap()
+                                                          .containsKey(
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodySmallFamily),
+                                                    ),
+                                            iconColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primaryText,
+                                            iconSize: 18.0,
+                                            elevation: 0.0,
+                                            borderColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .alternate,
+                                            borderWidth: 1.0,
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                          chipSpacing: 8.0,
+                                          rowSpacing: 8.0,
+                                          multiselect: false,
+                                          alignment: WrapAlignment.start,
+                                          controller: _model
+                                                  .choiceChipsValueController2 ??=
+                                              FormFieldController<List<String>>(
+                                            [],
+                                          ),
+                                          wrapped: true,
+                                        ),
                                       ].divide(SizedBox(height: 12.0)),
                                     ),
                                   ),
@@ -1010,53 +1524,72 @@ class _PostPropertyWidgetState extends State<PostPropertyWidget> {
                     ),
                   ),
                 ),
-                if (responsiveVisibility(
-                  context: context,
-                  tabletLandscape: false,
-                  desktop: false,
-                ))
-                  Container(
-                    constraints: BoxConstraints(
-                      maxWidth: 770.0,
-                    ),
-                    decoration: BoxDecoration(),
-                    child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(
-                          16.0, 12.0, 16.0, 12.0),
-                      child: FFButtonWidget(
-                        onPressed: () {
-                          print('Button pressed ...');
-                        },
-                        text: 'Create Product',
-                        options: FFButtonOptions(
-                          width: double.infinity,
-                          height: 48.0,
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              24.0, 0.0, 24.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 0.0),
-                          color: FlutterFlowTheme.of(context).primary,
-                          textStyle: FlutterFlowTheme.of(context)
-                              .titleSmall
-                              .override(
-                                fontFamily: FlutterFlowTheme.of(context)
-                                    .titleSmallFamily,
-                                color: Colors.white,
-                                letterSpacing: 0.0,
-                                useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                    FlutterFlowTheme.of(context)
-                                        .titleSmallFamily),
-                              ),
-                          elevation: 3.0,
-                          borderSide: BorderSide(
-                            color: Colors.transparent,
-                            width: 1.0,
-                          ),
-                          borderRadius: BorderRadius.circular(8.0),
+                Container(
+                  decoration: BoxDecoration(
+                    color: Colors.transparent,
+                  ),
+                  child: Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
+                    child: FFButtonWidget(
+                      onPressed: () async {
+                        _model.propertyAdd = await PropertiesTable().insert({
+                          'id': random_data
+                              .randomInteger(1000000, 99999999)
+                              .toString(),
+                          'host_id': currentUserUid,
+                          'title': _model.productNameTextController.text,
+                          'description': _model.descriptionTextController.text,
+                          'property_type': _model.priceTextController.text,
+                          'price_per_night': double.tryParse(
+                              _model.salesPriceTextController.text),
+                          'bedrooms': int.tryParse(_model.textController5.text),
+                          'bathrooms':
+                              int.tryParse(_model.textController6.text),
+                          'max_guests': 2,
+                          'address': _model.placePickerValue.latLng?.toString(),
+                          'city': _model.placePickerValue.city,
+                          'state': _model.placePickerValue.state,
+                          'country': _model.placePickerValue.country,
+                          'zip_code': _model.placePickerValue.zipCode,
+                          'is_active': true,
+                          'created_at':
+                              supaSerialize<DateTime>(getCurrentTimestamp),
+                          'updated_at':
+                              supaSerialize<DateTime>(getCurrentTimestamp),
+                        });
+
+                        safeSetState(() {});
+                      },
+                      text: 'Add Property',
+                      options: FFButtonOptions(
+                        width: double.infinity,
+                        height: 48.0,
+                        padding: EdgeInsets.all(8.0),
+                        iconPadding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        color: FlutterFlowTheme.of(context).primary,
+                        textStyle: FlutterFlowTheme.of(context)
+                            .titleSmall
+                            .override(
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).titleSmallFamily,
+                              color: Colors.white,
+                              letterSpacing: 0.0,
+                              useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                  FlutterFlowTheme.of(context)
+                                      .titleSmallFamily),
+                            ),
+                        elevation: 3.0,
+                        borderSide: BorderSide(
+                          color: Colors.transparent,
+                          width: 1.0,
                         ),
+                        borderRadius: BorderRadius.circular(8.0),
                       ),
                     ),
                   ),
+                ),
               ],
             ),
           ),

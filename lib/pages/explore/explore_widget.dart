@@ -1,3 +1,4 @@
+import '/backend/supabase/supabase.dart';
 import '/components/nav_bar/nav_bar_widget.dart';
 import '/components/stay_modal_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -260,11 +261,20 @@ class _ExploreWidgetState extends State<ExploreWidget>
                                       width: 1.0,
                                     ),
                                   ),
-                                  child: Icon(
-                                    Icons.add_circle_sharp,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    size: 20.0,
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      context.pushNamed('PostProperty');
+                                    },
+                                    child: Icon(
+                                      Icons.add_circle_sharp,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      size: 20.0,
+                                    ),
                                   ),
                                 ),
                               ],
@@ -359,199 +369,221 @@ class _ExploreWidgetState extends State<ExploreWidget>
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
-                                                ListView(
-                                                  padding: EdgeInsets.zero,
-                                                  shrinkWrap: true,
-                                                  scrollDirection:
-                                                      Axis.vertical,
-                                                  children: [
-                                                    Container(
-                                                      width: double.infinity,
-                                                      decoration: BoxDecoration(
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
-                                                      ),
-                                                      child: Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    12.0),
-                                                        child: Column(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          crossAxisAlignment:
-                                                              CrossAxisAlignment
-                                                                  .start,
-                                                          children: [
-                                                            Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
+                                                FutureBuilder<
+                                                    List<PropertiesRow>>(
+                                                  future: PropertiesTable()
+                                                      .queryRows(
+                                                    queryFn: (q) => q,
+                                                  ),
+                                                  builder: (context, snapshot) {
+                                                    // Customize what your widget looks like when it's loading.
+                                                    if (!snapshot.hasData) {
+                                                      return Center(
+                                                        child: SizedBox(
+                                                          width: 40.0,
+                                                          height: 40.0,
+                                                          child:
+                                                              CircularProgressIndicator(
+                                                            valueColor:
+                                                                AlwaysStoppedAnimation<
+                                                                    Color>(
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .primary,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      );
+                                                    }
+                                                    List<PropertiesRow>
+                                                        listViewPropertiesRowList =
+                                                        snapshot.data!;
+
+                                                    return ListView.builder(
+                                                      padding: EdgeInsets.zero,
+                                                      shrinkWrap: true,
+                                                      scrollDirection:
+                                                          Axis.vertical,
+                                                      itemCount:
+                                                          listViewPropertiesRowList
+                                                              .length,
+                                                      itemBuilder: (context,
+                                                          listViewIndex) {
+                                                        final listViewPropertiesRow =
+                                                            listViewPropertiesRowList[
+                                                                listViewIndex];
+                                                        return Container(
+                                                          width:
+                                                              double.infinity,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryBackground,
+                                                          ),
+                                                          child: Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        12.0),
+                                                            child: Column(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              crossAxisAlignment:
+                                                                  CrossAxisAlignment
+                                                                      .start,
+                                                              children: [
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           8.0,
                                                                           16.0,
                                                                           8.0),
-                                                              child: ClipRRect(
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            12.0),
-                                                                child:
-                                                                    Container(
-                                                                  decoration:
-                                                                      BoxDecoration(
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            12.0),
-                                                                  ),
                                                                   child:
                                                                       ClipRRect(
                                                                     borderRadius:
                                                                         BorderRadius.circular(
-                                                                            16.0),
-                                                                    child: Image
-                                                                        .network(
-                                                                      'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxMnx8aG90ZWxzfGVufDB8fHx8MTczODcxODQ0Nnww&ixlib=rb-4.0.3&q=80&w=1080',
-                                                                      width: double
-                                                                          .infinity,
-                                                                      height:
-                                                                          230.0,
-                                                                      fit: BoxFit
-                                                                          .cover,
+                                                                            12.0),
+                                                                    child:
+                                                                        Container(
+                                                                      decoration:
+                                                                          BoxDecoration(
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(12.0),
+                                                                      ),
+                                                                      child:
+                                                                          ClipRRect(
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(16.0),
+                                                                        child: Image
+                                                                            .network(
+                                                                          'https://images.unsplash.com/photo-1618773928121-c32242e63f39?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw1fHxob3RlbHxlbnwwfHx8fDE3Mzg5MzAzNzV8MA&ixlib=rb-4.0.3&q=80&w=1080',
+                                                                          width:
+                                                                              double.infinity,
+                                                                          height:
+                                                                              230.0,
+                                                                          fit: BoxFit
+                                                                              .cover,
+                                                                        ),
+                                                                      ),
                                                                     ),
                                                                   ),
                                                                 ),
-                                                              ),
-                                                            ),
-                                                            Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           0.0,
                                                                           16.0,
                                                                           4.0),
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .spaceBetween,
-                                                                children: [
-                                                                  Text(
-                                                                    'Maidstone, San Antonio, Tx.',
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyLarge
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).bodyLargeFamily,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                          useGoogleFonts:
-                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyLargeFamily),
+                                                                  child: Row(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .spaceBetween,
+                                                                    children: [
+                                                                      Text(
+                                                                        'Maidstone, San Antonio, Tx.',
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .bodyLarge
+                                                                            .override(
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyLargeFamily,
+                                                                              letterSpacing: 0.0,
+                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyLargeFamily),
+                                                                            ),
+                                                                      ),
+                                                                      Padding(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            16.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                        child:
+                                                                            Text(
+                                                                          '\$210/night',
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .titleLarge
+                                                                              .override(
+                                                                                fontFamily: FlutterFlowTheme.of(context).titleLargeFamily,
+                                                                                letterSpacing: 0.0,
+                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleLargeFamily),
+                                                                              ),
                                                                         ),
+                                                                      ),
+                                                                    ],
                                                                   ),
-                                                                  Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            16.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child: Text(
-                                                                      '\$210/night',
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleLarge
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).titleLargeFamily,
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleLargeFamily),
-                                                                          ),
-                                                                    ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ),
-                                                            Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
+                                                                ),
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           0.0,
                                                                           16.0,
                                                                           4.0),
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .spaceBetween,
-                                                                children: [
-                                                                  Expanded(
-                                                                    child: Text(
-                                                                      '32 miles away',
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelMedium
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).labelMediumFamily,
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
-                                                                          ),
-                                                                    ),
-                                                                  ),
-                                                                  Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
+                                                                  child: Row(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .spaceBetween,
+                                                                    children: [
+                                                                      Expanded(
+                                                                        child:
+                                                                            Text(
+                                                                          '32 miles away',
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .labelMedium
+                                                                              .override(
+                                                                                fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
+                                                                                letterSpacing: 0.0,
+                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
+                                                                              ),
+                                                                        ),
+                                                                      ),
+                                                                      Padding(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             16.0,
                                                                             4.0,
                                                                             4.0,
                                                                             0.0),
-                                                                    child: Text(
-                                                                      '4.25',
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelMedium
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).labelMediumFamily,
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
-                                                                          ),
-                                                                    ),
+                                                                        child:
+                                                                            Text(
+                                                                          '4.25',
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .labelMedium
+                                                                              .override(
+                                                                                fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
+                                                                                letterSpacing: 0.0,
+                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
+                                                                              ),
+                                                                        ),
+                                                                      ),
+                                                                      Icon(
+                                                                        Icons
+                                                                            .star_rounded,
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .secondaryText,
+                                                                        size:
+                                                                            24.0,
+                                                                      ),
+                                                                    ],
                                                                   ),
-                                                                  Icon(
-                                                                    Icons
-                                                                        .star_rounded,
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .secondaryText,
-                                                                    size: 24.0,
-                                                                  ),
-                                                                ],
-                                                              ),
+                                                                ),
+                                                              ],
                                                             ),
-                                                          ],
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ],
+                                                          ),
+                                                        );
+                                                      },
+                                                    );
+                                                  },
                                                 ),
                                               ],
                                             ),
@@ -564,199 +596,221 @@ class _ExploreWidgetState extends State<ExploreWidget>
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
-                                                ListView(
-                                                  padding: EdgeInsets.zero,
-                                                  shrinkWrap: true,
-                                                  scrollDirection:
-                                                      Axis.vertical,
-                                                  children: [
-                                                    Container(
-                                                      width: double.infinity,
-                                                      decoration: BoxDecoration(
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
-                                                      ),
-                                                      child: Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    12.0),
-                                                        child: Column(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          crossAxisAlignment:
-                                                              CrossAxisAlignment
-                                                                  .start,
-                                                          children: [
-                                                            Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
+                                                FutureBuilder<
+                                                    List<PropertiesRow>>(
+                                                  future: PropertiesTable()
+                                                      .queryRows(
+                                                    queryFn: (q) => q,
+                                                  ),
+                                                  builder: (context, snapshot) {
+                                                    // Customize what your widget looks like when it's loading.
+                                                    if (!snapshot.hasData) {
+                                                      return Center(
+                                                        child: SizedBox(
+                                                          width: 50.0,
+                                                          height: 50.0,
+                                                          child:
+                                                              CircularProgressIndicator(
+                                                            valueColor:
+                                                                AlwaysStoppedAnimation<
+                                                                    Color>(
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .primary,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      );
+                                                    }
+                                                    List<PropertiesRow>
+                                                        listViewPropertiesRowList =
+                                                        snapshot.data!;
+
+                                                    return ListView.builder(
+                                                      padding: EdgeInsets.zero,
+                                                      shrinkWrap: true,
+                                                      scrollDirection:
+                                                          Axis.vertical,
+                                                      itemCount:
+                                                          listViewPropertiesRowList
+                                                              .length,
+                                                      itemBuilder: (context,
+                                                          listViewIndex) {
+                                                        final listViewPropertiesRow =
+                                                            listViewPropertiesRowList[
+                                                                listViewIndex];
+                                                        return Container(
+                                                          width:
+                                                              double.infinity,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryBackground,
+                                                          ),
+                                                          child: Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        12.0),
+                                                            child: Column(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              crossAxisAlignment:
+                                                                  CrossAxisAlignment
+                                                                      .start,
+                                                              children: [
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           8.0,
                                                                           16.0,
                                                                           8.0),
-                                                              child: ClipRRect(
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            12.0),
-                                                                child:
-                                                                    Container(
-                                                                  decoration:
-                                                                      BoxDecoration(
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            12.0),
-                                                                  ),
                                                                   child:
                                                                       ClipRRect(
                                                                     borderRadius:
                                                                         BorderRadius.circular(
-                                                                            16.0),
-                                                                    child: Image
-                                                                        .network(
-                                                                      'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxMnx8aG90ZWxzfGVufDB8fHx8MTczODcxODQ0Nnww&ixlib=rb-4.0.3&q=80&w=1080',
-                                                                      width: double
-                                                                          .infinity,
-                                                                      height:
-                                                                          230.0,
-                                                                      fit: BoxFit
-                                                                          .cover,
+                                                                            12.0),
+                                                                    child:
+                                                                        Container(
+                                                                      decoration:
+                                                                          BoxDecoration(
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(12.0),
+                                                                      ),
+                                                                      child:
+                                                                          ClipRRect(
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(16.0),
+                                                                        child: Image
+                                                                            .network(
+                                                                          'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxMnx8aG90ZWxzfGVufDB8fHx8MTczODcxODQ0Nnww&ixlib=rb-4.0.3&q=80&w=1080',
+                                                                          width:
+                                                                              double.infinity,
+                                                                          height:
+                                                                              230.0,
+                                                                          fit: BoxFit
+                                                                              .cover,
+                                                                        ),
+                                                                      ),
                                                                     ),
                                                                   ),
                                                                 ),
-                                                              ),
-                                                            ),
-                                                            Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           0.0,
                                                                           16.0,
                                                                           4.0),
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .spaceBetween,
-                                                                children: [
-                                                                  Text(
-                                                                    'Maidstone, San Antonio, Tx.',
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyLarge
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).bodyLargeFamily,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                          useGoogleFonts:
-                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyLargeFamily),
+                                                                  child: Row(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .spaceBetween,
+                                                                    children: [
+                                                                      Text(
+                                                                        'Maidstone, San Antonio, Tx.',
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .bodyLarge
+                                                                            .override(
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyLargeFamily,
+                                                                              letterSpacing: 0.0,
+                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyLargeFamily),
+                                                                            ),
+                                                                      ),
+                                                                      Padding(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            16.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                        child:
+                                                                            Text(
+                                                                          '\$210/night',
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .titleLarge
+                                                                              .override(
+                                                                                fontFamily: FlutterFlowTheme.of(context).titleLargeFamily,
+                                                                                letterSpacing: 0.0,
+                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleLargeFamily),
+                                                                              ),
                                                                         ),
+                                                                      ),
+                                                                    ],
                                                                   ),
-                                                                  Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            16.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child: Text(
-                                                                      '\$210/night',
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleLarge
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).titleLargeFamily,
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleLargeFamily),
-                                                                          ),
-                                                                    ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ),
-                                                            Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
+                                                                ),
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           0.0,
                                                                           16.0,
                                                                           4.0),
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .spaceBetween,
-                                                                children: [
-                                                                  Expanded(
-                                                                    child: Text(
-                                                                      '32 miles away',
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelMedium
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).labelMediumFamily,
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
-                                                                          ),
-                                                                    ),
-                                                                  ),
-                                                                  Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
+                                                                  child: Row(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .spaceBetween,
+                                                                    children: [
+                                                                      Expanded(
+                                                                        child:
+                                                                            Text(
+                                                                          '32 miles away',
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .labelMedium
+                                                                              .override(
+                                                                                fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
+                                                                                letterSpacing: 0.0,
+                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
+                                                                              ),
+                                                                        ),
+                                                                      ),
+                                                                      Padding(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             16.0,
                                                                             4.0,
                                                                             4.0,
                                                                             0.0),
-                                                                    child: Text(
-                                                                      '4.25',
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelMedium
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).labelMediumFamily,
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
-                                                                          ),
-                                                                    ),
+                                                                        child:
+                                                                            Text(
+                                                                          '4.25',
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .labelMedium
+                                                                              .override(
+                                                                                fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
+                                                                                letterSpacing: 0.0,
+                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
+                                                                              ),
+                                                                        ),
+                                                                      ),
+                                                                      Icon(
+                                                                        Icons
+                                                                            .star_rounded,
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .secondaryText,
+                                                                        size:
+                                                                            24.0,
+                                                                      ),
+                                                                    ],
                                                                   ),
-                                                                  Icon(
-                                                                    Icons
-                                                                        .star_rounded,
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .secondaryText,
-                                                                    size: 24.0,
-                                                                  ),
-                                                                ],
-                                                              ),
+                                                                ),
+                                                              ],
                                                             ),
-                                                          ],
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ],
+                                                          ),
+                                                        );
+                                                      },
+                                                    );
+                                                  },
                                                 ),
                                               ],
                                             ),

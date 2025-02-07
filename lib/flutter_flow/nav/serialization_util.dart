@@ -5,6 +5,8 @@ import 'package:from_css_color/from_css_color.dart';
 
 import '/backend/backend.dart';
 
+import '/backend/supabase/supabase.dart';
+
 import '../../flutter_flow/lat_lng.dart';
 import '../../flutter_flow/place.dart';
 import '../../flutter_flow/uploaded_file.dart';
@@ -89,6 +91,9 @@ String? serializeParam(
       case ParamType.Document:
         final reference = (param as FirestoreRecord).reference;
         data = _serializeDocumentReference(reference);
+
+      case ParamType.SupabaseRow:
+        return json.encode((param as SupabaseDataRow).data);
 
       default:
         data = null;
@@ -180,6 +185,7 @@ enum ParamType {
 
   Document,
   DocumentReference,
+  SupabaseRow,
 }
 
 dynamic deserializeParam<T>(
@@ -234,6 +240,29 @@ dynamic deserializeParam<T>(
         return json.decode(param);
       case ParamType.DocumentReference:
         return _deserializeDocumentReference(param, collectionNamePath ?? []);
+
+      case ParamType.SupabaseRow:
+        final data = json.decode(param) as Map<String, dynamic>;
+        switch (T) {
+          case ImagesRow:
+            return ImagesRow(data);
+          case PaymentsRow:
+            return PaymentsRow(data);
+          case PropertiesRow:
+            return PropertiesRow(data);
+          case BookingsRow:
+            return BookingsRow(data);
+          case PropertyAmenitiesRow:
+            return PropertyAmenitiesRow(data);
+          case AmenitiesRow:
+            return AmenitiesRow(data);
+          case UsersRow:
+            return UsersRow(data);
+          case ReviewsRow:
+            return ReviewsRow(data);
+          default:
+            return null;
+        }
 
       default:
         return null;
